@@ -1,4 +1,4 @@
-    // Sample data for cabins
+
     const cabins = [
       {
         id: 1,
@@ -62,7 +62,7 @@
       }
     ];
 
-    // Function to create cabin cards
+//Funcion para crear card de cabañas
     function createCabinCards() {
       const container = document.getElementById('cabins-container');
       container.innerHTML = '';
@@ -71,7 +71,7 @@
         const card = document.createElement('div');
         card.className = 'col-lg-4 col-md-6';
         card.innerHTML = `
-          <div class="cabin-card" data-id="${cabin.id}" data-aos="fade-up">
+          <div class="cabin-card animate-on-scroll" data-id="${cabin.id}" data-aos="fade-up">
             <span class="price-tag">$${cabin.price}/noche</span>
             <img src="${cabin.image}" alt="${cabin.title}" class="card-img-top">
             <div class="card-body p-3">
@@ -227,3 +227,24 @@
         window.scrollTo(0, lastView.scrollPosition);
       }
     });
+
+// Detectar cuando los elementos están en el viewport
+function handleScrollAnimation() {
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  const windowHeight = window.innerHeight;
+
+  elements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+
+    // Si el elemento está dentro del viewport, añadir clase `visible`
+    if (elementTop < windowHeight - 100) {
+      element.classList.add('visible');
+    }
+  });
+}
+
+// Añadir evento de scroll
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Llamar la función una vez para detectar elementos visibles al cargar la página
+document.addEventListener('DOMContentLoaded', handleScrollAnimation);

@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top animate-on-scroll">
     <div class="container">
       <a class="navbar-brand" href="#">
         <i class="fas fa-tree me-2"></i>Cabañas del Bosque
@@ -41,12 +41,11 @@
       </div>
     </div>
   </nav>
-
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section animate-on-scroll">
     <img src="https://cdn.pixabay.com/photo/2018/05/17/16/03/mountain-3408121_1280.jpg" alt="Fondo de cabañas" class="bg-image">
     <div class="container content">
-      <div class="container text-center" data-aos="fade-up">
+      <div class="container text-center">
         <h1 class="display-4 fw-bold mb-4">Descubre la paz en nuestras cabañas</h1>
         <p class="lead mb-4">El lugar perfecto para desconectar y disfrutar de la naturaleza</p>
         <a href="#cabins" class="btn btn-lg reserve-btn text-white px-4 py-3">Ver Cabañas</a>
@@ -54,10 +53,10 @@
     </div>
   </section>
 
-  <!-- Filters Section -->
+  <!-- Filtros -->
   <section class="py-5">
     <div class="container">
-      <div class="filters-section" data-aos="fade-up">
+      <div class="filters-section animate-on-scroll">
         <h4 class="mb-3">Filtrar cabañas</h4>
         <div class="row g-3">
           <div class="col-lg-3 col-md-4 col-6">
@@ -106,8 +105,8 @@
   <!-- Cabins Section -->
   <section id="cabins" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5" data-aos="fade-up">Nuestras Cabañas</h2>
-      <div class="row g-4" id="cabins-container">
+      <h2 class="text-center mb-5 animate-on-scroll">Nuestras Cabañas</h2>
+      <div class="row g-4" id="cabins-container" class="animate-on-scroll">
         <!-- Cabin cards will be added here by JavaScript -->
       </div>
     </div>
@@ -216,18 +215,12 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer animate-on-scroll">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
           <h5>Cabañas del Bosque</h5>
           <p>Ofrecemos una experiencia única en medio de la naturaleza, con cabañas cómodas y bien equipadas para que disfrutes de unas vacaciones inolvidables.</p>
-          <div class="social-icons mt-4">
-            <a href="#><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
         </div>
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h5>Enlaces</h5>
@@ -256,12 +249,13 @@
           </div>
         </div>
       </div>
-      <hr class="mt-4 mb-3" style="border-color: rgba(255, 255, 255, 0.1);">
+      <hr class="mt-4 mb-3">
       <div class="text-center">
         <p class="mb-0">© 2025 Cabañas del Bosque. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

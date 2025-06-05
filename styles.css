@@ -1,13 +1,16 @@
     /* Variables de color */
     :root {
-      --primary-color: #d4af37; /* dorado */
-      --primary-dark: #b38b21;
+      --primary-color: #d4af37; /* #d4af37 dorado */
+      --primary-dark: #b38b21; /*#b38b21  */
       --secondary-color: #2c3e50;
       --background-light: #f9fafb;
       --text-dark: #222;
-      --text-muted: #555;
+      --text-muted: #1f2d3d;
       --border-radius: 0.5rem;
       --transition-speed: 0.3s;
+
+      --primary-light: #f6e27a; /*#e6c84d;*/
+      --background-dark: #1f2d3d;
     }
 
     /* Reset y base */
@@ -69,61 +72,115 @@
     }
 
     /* Banner */
-    section.banner {
-      background: url('assets/imagenes/paisajePileta.jpg') no-repeat center center/cover;
-      background-position: center 20%;
-      padding: 6rem 0 5rem;
-      position: relative;
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-      min-height: 750px;   
-      display: flex;
-    }
-    .banner .banner-content h1 {
-      font-size: 4.5rem;
-      font-weight: 800;
-      line-height: 1.1;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
-      padding-top: 5%;
-    }
-    .banner .banner-content h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #f6e27a;
-      margin-bottom: 2.5rem;
-      border-bottom: 4px solid var(--primary-color);
-      display: inline-block;
-      padding-bottom: 0.25rem;
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-    }
-    .banner .btn-warning {
-      background-color: var(--primary-color);
-      border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.75rem;
-      font-weight: 700;
-      border-radius: var(--border-radius);
-      box-shadow: 0 6px 15px rgb(212 175 55 / 0.6);
-      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
-      text-transform: uppercase;
-    }
-    .banner .btn-warning:hover,
-    .banner .btn-warning:focus {
-      background-color: var(--primary-dark);
-      box-shadow: 0 8px 20px rgb(179 139 33 / 0.8);
-    }
+.banner3d {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ece9e6 0%, #e2dedb 60%, #d4af37 100%);
+}
+
+.banner-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 340px;
+  transform: translate(-50%, -50%) skewY(-6deg);
+  z-index: 1;
+  background: linear-gradient(120deg, #f3f3f3 0%, #e2dedb 70%, #d4af37 100%);
+  box-shadow: 0 26px 60px 0 rgba(44,62,80,0.15), 0 2px 28px 0 rgba(212,175,55,0.10);
+  border-radius: 50px;
+  filter: blur(1.2px);
+  opacity: 0.80;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-slogan {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Montserrat', 'Archivo Black', sans-serif;
+  font-weight: 900;
+  font-size: 4.2rem;
+  transform: translate(-50%, -50%) skewY(-6deg);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #242424;
+  text-shadow:
+    0 8px 32px rgba(44, 62, 80, 0.13),
+    0 2px 0 #d4af37;
+  text-transform: uppercase;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: overlay;
+}
+
+.banner-slogan span {
+  display: block;
+  background: linear-gradient(90deg, #b3a88a 25%, #fff 60%, #d4af37 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px #cdc7b6);
+}
+
+.cabin-image-wrapper {
+  position: relative;
+  z-index: 3;
+  margin-top: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  min-height: 350px;
+  pointer-events: none;
+}
+
+.cabin-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 32px 48px rgba(44,62,80,0.13)) drop-shadow(0 2px 12px #d4af37);
+  border-radius: 18px;
+  background: transparent;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .banner-bg { width: 98vw; height: 220px; }
+  .banner-slogan { font-size: 2.2rem; max-width: 95vw; }
+  .cabin-image-wrapper { margin-top: 110px; min-height: 180px; }
+  .cabin-image { max-width: 350px; }
+}
+@media (max-width: 600px) {
+  .banner-bg { height: 120px; }
+  .banner-slogan { font-size: 1.25rem; }
+  .cabin-image-wrapper { margin-top: 62px; }
+}
     .btn-reserva-grad:hover {
       background-position: right center;
       box-shadow: 0 10px 25px rgb(179 139 33 / 0.35);
       color: white !important;
-    }
-    .banner {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgb(0 0 0 / 0.3);
     }
     /*.instagram-link {
       position: relative;
@@ -160,20 +217,44 @@
     }
 
     /* Sobre el complejo */
+    
+    #complejo .accordion-header {
+      width: 100%;
+    }
+    #complejo .accordion-button {
+      background-color: var(--secondary-color);
+      color: white;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      border-radius: var(--border-radius);
+      box-shadow: none;
+      transition: background-color var(--transition-speed);
+    }
+    
+    #complejo .accordion-button:not(.collapsed) {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      
+    }
+    
+    #complejo .accordion-body {
+      background-color: #fff;
+      color: var(--secondary-color);
+      font-weight: 500;
+      border-radius: var(--border-radius);
+    }
+
     #complejo h3 {
       font-size: 1.9rem;
       margin-bottom: 1rem;
       color: var(--secondary-color);
     }
-    #complejo h4 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-top: 1.2rem;
-      color: var(--primary-dark);
+    #complejo .accordion-item h2 {
+      border-bottom: 5px solid var(--secondary-color);
     }
     #complejo ul {
       list-style-type: disc;
-      margin-left: 1.5rem;
       margin-bottom: 1rem;
     }
     #complejo ul li {
@@ -184,7 +265,7 @@
     #complejo video {
       width: 100%;
       border-radius: var(--border-radius);
-      box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+      box-shadow: 5px 5px 24px var(--secondary-color);
     }
 
     /* Cards Cabañas */
@@ -231,7 +312,7 @@
       margin-bottom: 2rem;
       color: var(--secondary-color);
     }
-
+    
     /*Imagenes*/
     #galeria {
       position: relative;
@@ -239,7 +320,7 @@
     #galeria-title{
       font-size: 4vw;
     }
-    #paraiso-title.colorful-text {
+    #paraiso-title {
       font-size: 6vw;
       font-family:  'Cinzel', serif;
       font-weight: bold;
@@ -249,10 +330,9 @@
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     }
 
-    #paraiso-title.colorful-text span {
+    #paraiso-title span {
       color: rgb(179 139 33 / 0.8);
       animation: colorChange 2s infinite alternate;
-      animation-fill-mode: forwards;
       animation-delay: calc(var(--i) * 0.3s);
       display: inline-block;
     }
@@ -297,7 +377,7 @@
     #ubicacion iframe {
       border-radius: var(--border-radius);
       border: 4px solid var(--primary-color);
-      box-shadow: 0 8px 24px rgb(212 175 55 / 0.3);
+      box-shadow: 0 8px 24px var(--primary-light);
       min-height: 320px;
     }
     #ubicacion h6 {
@@ -322,7 +402,7 @@
       background-attachment: fixed; /* Efecto de parallax */
     }
     .contacto h2 {
-      color: var(--primary-color);
+      color: var(--primary-light);
       margin-bottom: 2rem;
     }
     .contacto p {
@@ -351,17 +431,20 @@
     .contacto form .btn-warning {
       background-color: var(--primary-color);
       border-radius: var(--border-radius);
+      border: none;
       font-weight: 700;
       font-size: 1.25rem;
       padding: 0.8rem 2rem;
-      box-shadow: 0 8px 20px rgb(212 175 55 / 0.7);
       transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
       text-transform: uppercase;
     }
     .contacto form .btn-warning:hover,
     .contacto form .btn-warning:focus {
       background-color: var(--primary-dark);
-      box-shadow: 0 10px 25px rgb(179 139 33 / 0.85);
+      box-shadow: 0 10px 25px var(--primary-light);
+    }
+    .contacto .form-floating > label {
+      left: 1.5rem; /* mueve el label a la derecha */
     }
     .contacto > .container {
       position: relative;
@@ -380,14 +463,13 @@
 
     /* Preguntas frecuentes */
     #preguntas {
-      background-color: var(--secondary-color);
-      color: #eee;
+      background-color: var(--background-dark);
       padding-top: 6rem;
       padding-bottom: 6rem;
     }
     #preguntas h2 {
-      border-color: #f6e27a;
-      color: #f6e27a;
+      border-color: var(--primary-color);
+      color: var(--primary-light);
       margin-bottom: 3rem;
     }
     #preguntas .accordion-button {
@@ -406,8 +488,8 @@
       justify-content: space-between;
     }
     #preguntas .accordion-button:not(.collapsed) {
-      background-color: var(--primary-dark);
-      color: #fff;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
       box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15);
     }
     #preguntas .accordion-item {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
 
     <!-- Nav -->
     <header>
@@ -33,16 +33,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto text-uppercase">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold active" href="#complejo">Sobre el Complejo</a>
+                            <a class="nav-link fw-bold" href="#complejo">Sobre el Complejo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="#cabañas">Nuestras Cabañas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="#ubicacion">Ubicación</a>
+                            <a class="nav-link fw-bold" href="#galeria">Galería</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="#galeria">Galería</a>
+                            <a class="nav-link fw-bold" href="#ubicacion">Ubicación</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="#contacto">Contacto</a>
@@ -57,93 +57,149 @@
     </header>
 
     <!-- Banner -->
-    <section class="banner" id="banner" role="banner"
-        aria-label="Imagen principal con información sobre Cabañas La Bonita">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-12 text-center">
-                    <div class="banner-content text-center" tabindex="0">
-                        <h1>Cabañas<br>"La Bonita"</h1>
-                        <h2>DESCONECTA, DISFRUTA Y DESCANSA</h2><br>
-                        <a href="#" target="_blank" class="btn btn-dark btn-reserva-grad text-uppercase fs-2 fw-bold px-2 py-3">¡Reserva Ahora!</a>
-                    </div>
-                </div>                
-            </div>
+    <section class="banner3d" id="banner">
+    <div class="banner-bg"></div>
+    <div class="banner-content">
+        <h1 class="banner-slogan"><BR></BR>
+        <span>DESCONECTA, DISFRUTA Y DESCANSA</span>
+        </h1>
+        <div class="cabin-image-wrapper">
+        <img src="assets/imagenes/cabaña.png" alt="Cabaña la Bonita" class="cabin-image"/>
         </div>
+    </div>
     </section>
 
-    <!-- Sobre el Complejo -->
+    <!-- Sobre el Complejo V2-->
     <section class="bg-white" id="complejo" tabindex="0" aria-labelledby="complejo-title">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <h2 id="complejo-title">Sobre el Complejo</h2>
                 </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <h3>Tipos de Cabañas</h3>
-                    <p>En nuestro complejo contamos con <strong>cinco cabañas totalmente equipadas</strong>, ideales
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h3>Tipos de Cabañas</h3>
+                        <p>En nuestro complejo contamos con <strong>cinco cabañas totalmente equipadas</strong>, ideales
                         para disfrutar en familia o en pareja. A continuación, te presentamos las opciones disponibles:
-                    </p>
+                        </p>
+                        <div class="accordion" id="accordionCabanas" role="region" aria-live="polite">
+                            <div class="accordion-item shadow-sm mb-3 rounded">
+                                <h2 class="accordion-header" id="headingOneC">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOneC" aria-expanded="false" aria-controls="collapseOneC">
+                                    🛏️ Cabañas chicas (2 unidades)
+                                </button>
+                                </h2>
+                                <div id="collapseOneC" class="accordion-collapse collapse" aria-labelledby="headingOneC"
+                                data-bs-parent="#accordionCabanas">
+                                <div class="accordion-body">
+                                    <p><strong>Perfectas para escapadas románticas o grupos pequeños (2–3 personas).</strong></p>
+                                    <ul>
+                                        <li>1 dormitorio</li>
+                                        <li>1 baño privado</li>
+                                        <li>Cocina-comedor integrados</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
 
-                    <h4>🛏️ Cabañas chicas (2 unidades)</h4>
-                    <p>Ideales para parejas o grupos pequeños, estas cabañas tienen capacidad para <strong>2 a 3
-                            personas</strong>.</p>
-                    <ul>
-                        <li>Un dormitorio</li>
-                        <li>Un baño</li>
-                        <li>Cocina y comedor integrados en un mismo ambiente</li>
-                    </ul>
+                            <div class="accordion-item shadow-sm mb-3 rounded">
+                                <h2 class="accordion-header" id="headingTwoC">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwoC" aria-expanded="false" aria-controls="collapseTwoC">
+                                    🏡 Cabañas medianas (2 unidades en planta alta)
+                                </button>
+                                </h2>
+                                <div id="collapseTwoC" class="accordion-collapse collapse" aria-labelledby="headingTwoC"
+                                data-bs-parent="#accordionCabanas">
+                                <div class="accordion-body">
+                                    <p><strong>Ideales para familias pequeñas (4–5 personas), con vista elevada.</strong></p>
+                                    <ul>
+                                        <li>1 dormitorio</li>
+                                        <li>1 baño</li>
+                                        <li>Cocina-comedor</li>
+                                        <li>Balcón o galería</li>
+                                        <li>Hogar a gas</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
 
-                    <h4>🏡 Cabañas medianas (2 unidades en planta alta)</h4>
-                    <p>Ubicadas en la planta alta, estas cabañas son perfectas para familias pequeñas, con capacidad
-                        para <strong>4 a 5 personas</strong>.</p>
-                    <ul>
-                        <li>Un dormitorio</li>
-                        <li>Un baño</li>
-                        <li>Cocina y comedor en un solo ambiente</li>
-                        <li>Balcón o galería</li>
-                        <li>Hogar a gas para calefacción</li>
-                    </ul>
+                            <div class="accordion-item shadow-sm mb-3 rounded">
+                                <h2 class="accordion-header" id="headingThreeC">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThreeC" aria-expanded="false" aria-controls="collapseThreeC">
+                                    🏠 Cabaña grande (1 unidad)
+                                </button>
+                                </h2>
+                                <div id="collapseThreeC" class="accordion-collapse collapse" aria-labelledby="headingThreeC"
+                                data-bs-parent="#accordionCabanas">
+                                <div class="accordion-body">
+                                    <p><strong>La opción más amplia (5–6 personas), perfecta para grupos o familias numerosas.</strong></p>
+                                    <ul>
+                                        <li>2 dormitorios</li>
+                                        <li>1 baño</li>
+                                        <li>Cocina y comedor integrados</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
 
-                    <h4>🏠 Cabaña grande (1 unidad)</h4>
-                    <p>La opción ideal para familias numerosas o grupos, esta cabaña tiene capacidad para <strong>5 a 6
-                            personas</strong>.</p>
-                    <ul>
-                        <li>Dos dormitorios</li>
-                        <li>Un baño</li>
-                        <li>Cocina y comedor en la misma habitación</li>
-                    </ul>
+                            <div class="accordion-item shadow-sm mb-3 rounded">
+                                <h2 class="accordion-header" id="headingFourC">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFourC" aria-expanded="false" aria-controls="collapseFourC">
+                                    ✨ Servicios incluidos en todas las cabañas:
+                                </button>
+                                </h2>
+                                <div id="collapseFourC" class="accordion-collapse collapse" aria-labelledby="headingFourC"
+                                data-bs-parent="#accordionCabanas">
+                                <div class="accordion-body">
+                                    <ul class="row">
+                                    <li class="col-md-6">📺 DirecTV y Wi-Fi compartido</li>
+                                    <li class="col-md-6">🛏️ Ropa de cama y toallas</li>
+                                    <li class="col-md-6">🍽️ Utensilios de cocina completos</li>
+                                    <li class="col-md-6">🔥 Agua caliente, gas, estufas eléctricas y ventilador</li>
+                                    <li class="col-md-6">🥩 Parrillas individuales</li>
+                                    <li class="col-md-6">🚗 Cocheras techadas</li>
+                                    <li class="col-md-6">🍽️ Quincho con parrilla grande y juegos de mesa</li>
+                                    <li class="col-md-6">🔥 Fogón al aire libre</li>
+                                    <li class="col-md-6">🎠 Juegos para niños (hamacas, tobogán)</li>
+                                    <li class="col-md-6">🏊 Piscina y solárium</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
 
-                    <h4>Servicios incluidos en todas las cabañas</h4>
-                    <ul>
-                        <li>Directv y Wifi compartido</li>
-                        <li>Ropa de cama y juegos de toallas</li>
-                        <li>Utensilios de cocina completos (platos, vasos, tazas, cubiertos, etc.)</li>
-                        <li>Agua caliente y gas</li>
-                        <li>Estufas eléctricas y ventilador</li>
-                        <li>Parrillas individuales</li>
-                        <li>Cocheras techadas</li>
-                        <li>Acceso a quincho con parrilla grande, mesas, sillas y juegos de mesa</li>
-                        <li>Fogón</li>
-                        <li>Parque con juegos para niños (hamaca, tobogán)</li>
-                        <li>Piscina y solárium</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5 col-md-6 text-center">
-                    <video autoplay muted loop playsinline controlslist="nodownload" class="shadow"
-                        style="border-radius: var(--border-radius); max-width: 100%;">
-                        <source src="assets/videos/dron.mp4" type="video/mp4" />
-                        Tu navegador no soporta videos HTML5.
-                    </video>
+                            <div class="accordion-item shadow-sm mb-3 rounded">
+                                <h2 class="accordion-header" id="headingFiveC">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFiveC" aria-expanded="false" aria-controls="collapseFiveC">
+                                    🎥 Video del Complejo
+                                </button>
+                                </h2>
+                                <div id="collapseFiveC" class="accordion-collapse collapse" aria-labelledby="headingFiveC"
+                                data-bs-parent="#accordionCabanas">
+                                <div class="accordion-body">
+                                    <div class="col-md-6 offset-md-3 text-center">
+                                        <video autoplay muted loop playsinline controlslist="nodownload">
+                                            <source src="assets/videos/dron.mp4" type="video/mp4" />
+                                            Tu navegador no soporta videos HTML5.
+                                        </video>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
     <!-- Nuestras Cabañas -->
-    <section class="bg-white" id="cabañas" tabindex="0" aria-labelledby="cabanas-title">
+    <section class="bg-light" id="cabañas" tabindex="0" aria-labelledby="cabanas-title">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-lg-8 offset-lg-2 text-center">
@@ -339,7 +395,7 @@
                     <div class="accordion" id="accordionExample" role="region" aria-live="polite">
                         <div class="accordion-item shadow-sm mb-3 rounded">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button w-100 collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     <span class="accordion-text">¿Cuáles son las políticas de cancelación?</span>
                                 </button>

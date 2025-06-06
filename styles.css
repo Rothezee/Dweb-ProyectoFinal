@@ -14,12 +14,14 @@
     }
 
     /* Reset y base */
+    
     body {
       font-family: 'Lato', sans-serif;
       background-color: var(--background-light);
       color: var(--text-dark);
       scroll-behavior: smooth;
       padding-top: 70px; /* Para navbar fijo */
+      
     }
 
     h1, h2, h3, h4, h5 {
@@ -73,7 +75,7 @@
 
     /* Banner */
     section.banner {
-      background: url('assets/imagenes/paisajePileta.jpg') no-repeat center center/cover;
+      background: url('assets/imagenes/PILETA/paisajePileta.jpg') no-repeat center center/cover;
       background-position: center 20%;
       padding: 6rem 0 5rem;
       position: relative;
@@ -195,6 +197,7 @@
 
     /* Cards Cabañas */
     #cabañas .card {
+      cursor: pointer;
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: 0 10px 24px rgb(0 0 0 / 0.12);
@@ -222,14 +225,16 @@
     }
     #cabañas .card .btn-warning {
       background-color: var(--primary-color);
+      color: var(--secondary-color);
       border: none;
       font-weight: 700;
       text-transform: uppercase;
-      transition: background-color var(--transition-speed);
+      transition: all var(--transition-speed);
     }
     #cabañas .card .btn-warning:hover,
     #cabañas .card .btn-warning:focus {
       background-color: var(--primary-dark);
+      color: white;
     }
     #cabañas p.text-center.fw-medium {
       font-weight: 600;
@@ -237,7 +242,147 @@
       margin-bottom: 2rem;
       color: var(--secondary-color);
     }
+
+    #cabañas .card .price-tag {
+      position: absolute;
+      z-index: 10;
+      top: 10px;
+      right: 10px;
+      background-color: var(--primary-light);
+      color: var(--secondary-color);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* Modal */
     
+    .modal .modal-content {
+      position: relative;
+      
+    }
+
+    .modal .modal-body {
+      padding: 0;
+      margin: 0;
+      text-justify: auto;
+      overflow-x: hidden;
+    }
+
+    #row-container {
+      height: 500px; /* o el alto total que desees */
+      overflow: hidden;
+      
+    }
+    
+    #row-container .col-5,
+    #row-container .col-7 {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    img[name="imagenes-modal"] {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      flex: 1; /* Cada imagen toma una fracción igual del alto */
+      overflow: hidden;
+    }
+    
+    .modal .btn-close {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      background: none;
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+      z-index: 100;
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-speed) ease;
+      box-shadow: 0 10px 24px var(--secondary-color);
+    }
+    .modal .btn-close p {
+      padding: 0;
+      margin: 0;
+      color: white;
+    }
+    .modal .btn-close:hover {
+      background-color: var(--secondary-color);
+      box-shadow: 0 10px 24px var(--primary-light);
+    }
+
+    .modal #modal-features {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .modal #modal-features li {
+      background-color: #f0f0f0;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    .modal .badge {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1rem;
+    }
+    /* Formulario del modal */
+
+    .modal form .form-floating > .form-control, .form-select {
+      border-radius: var(--border-radius);
+      background-color: rgba(255 255 255 / 0.9);
+      color: var(--secondary-color);
+      font-weight: 600;
+      transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+    }
+    .modal form .form-floating > .form-control:focus, .form-select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 15px var(--primary-light);
+      background-color: #fff;
+      color: var(--secondary-color);
+    }
+    .modal form label {
+      color: var(--secondary-color);
+      font-weight: 700;
+    }
+    .modal form .btn-warning {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 5px 25px var(--secondary-color);
+      border-radius: var(--border-radius);
+      border: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 0.8rem 2rem;
+      transition: all var(--transition-speed);
+      text-transform: uppercase;
+    }
+    .modal form .btn-warning:hover,
+    .modal form .btn-warning:focus {
+      background-color: var(--secondary-color);
+      box-shadow: 0 10px 25px var(--primary-light);
+    }
+    .modal .form-floating > label {
+      left: 1rem; /* mueve el label a la derecha */
+    }
+
+
     /*Imagenes*/
     #galeria {
       position: relative;
@@ -275,7 +420,7 @@
       position:absolute;
       top: 57%;
       left: 0;
-      width: 100vw;    
+      width: 100%;    
       height: 40%;  
       background-color: #2c3e50;
       border-radius: 5px;
@@ -319,7 +464,7 @@
 
     /* Contacto */
     .contacto {
-      background: url('assets/imagenes/complejoNoche.jpg') no-repeat center center/cover;
+      background: url('assets/imagenes/COMPLEJO/complejoNoche.jpg') no-repeat center center/cover;
       color: #fff;
       padding: 6rem 0;
       position: relative;
@@ -356,17 +501,19 @@
     .contacto form .btn-warning {
       background-color: var(--primary-color);
       border-radius: var(--border-radius);
+      color: var(--secondary-color);
       border: none;
       font-weight: 700;
       font-size: 1.25rem;
       padding: 0.8rem 2rem;
-      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+      transition: all var(--transition-speed);
       text-transform: uppercase;
     }
     .contacto form .btn-warning:hover,
     .contacto form .btn-warning:focus {
       background-color: var(--primary-dark);
       box-shadow: 0 10px 25px var(--primary-light);
+      color: white;
     }
     .contacto .form-floating > label {
       left: 1.5rem; /* mueve el label a la derecha */
@@ -456,198 +603,14 @@
       box-shadow: 0 10px 25px rgb(179 139 33 / 0.35);
     }
 
-    /* Footer 1*/
-    .footer-1 {
-      position: relative;
-      background-color: #2c3e50;
-      width: 100%;
-      min-height: 70px;
-      padding: 1%;
-      padding-top: 40px; /* espacio para que el contenido no choque con las olas */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .footer-logo {
-      max-width: 120px;
-      max-height: 100px;
-    }
-    footer #contain {
-      position: relative;
-      padding: 1rem 0;
-      z-index: 1; /* arriba de las olas */
-      width: 100%;
-    }
-    footer .waves {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      z-index: 0; /* detrás del contenido */
-      border: #e9d15a;
-    }
-    footer .wave{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 200%;
-      background: url('../assets/svg/wave.svg');
-      background-size: 40% 200%;
-    }
-    footer .wave#wave1{
-      z-index: 2;
-      opacity: 1;
-      bottom: 50px;
-      animation: animateWave 4s linear infinite;      
-    }
-    footer .wave#wave2{
-      z-index: 3;
-      opacity: 1;
-      bottom: 40px;
-      animation: animateWave-02 4s linear infinite;      
-    }
-    footer .wave#wave3{
-      z-index: 2;
-      opacity: 0.5;
-      bottom: 40px;
-      animation: animateWave-02 3s linear infinite;      
-    }
-    footer .wave#wave4{
-      z-index: 3;
-      opacity: 0.7;
-      bottom: 40px;
-      animation: animateWave-02 3s linear infinite;      
-    }
-    @keyframes animateWave {
-      0% { background-position-x: 1000px;}
-      100% { background-position-x: 0px; }
-    }
-    @keyframes animateWave-02 {
-      0% { background-position-x: 0px;}
-      100% { background-position-x: 1000px; }
-    }
 
-    .foot-link {
-      text-decoration: none;
-      color: var(--secondary-color);
-      font-weight: 700;
-      position: relative;
-      transition: color var(--transition-speed);
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-    .foot-link::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: -4px;
-      background-color: var(--primary-color);
-      transition: width var(--transition-speed);
-      border-radius: 2px;
-    }
-    .foot-link:hover, .foot-link:focus,
-    .foot-link.active {
-      color: var(--primary-dark);
-    }
-    .foot-link:hover::after, .foot-link:focus::after,
-    .foot-link.active::after {
-      width: 100%;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 25px;
-      padding-left: 0;
-      align-items: center;
-    }
-    .social-item {
-      list-style: none;
-      width: 60px;
-      height: 60px;
-      border-radius: 60px;
-      background: #222;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      transition: 0.5s;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .social-item:hover {
-      width: 180px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    .social-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 60px;
-      background: linear-gradient(45deg, var(--i), var(--j));
-      opacity: 0.3;
-      transition: 0.5s;
-      z-index: 1;
-      filter: blur(10px);
-    }
-    .social-item:hover::before {
-      opacity: 1;
-      z-index: 0;
-    }
-    .social-item a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      gap: 10px;
-      z-index: 2;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      padding: 0 10px;
-      transition: 0.3s ease;
-    }
-    .social-item:hover a {
-      justify-content: flex-start;
-    }
-    .social-item .icon i {
-      color: #fff;
-      font-size: 1.5rem;
-      transition: 0.3s;
-      position: relative;
-      z-index: 2;
-    }
-    .social-item .titulo {
-      display: none;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: 0.3s;
-    }
-    .social-item:hover .titulo {
-      display: inline;
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .d-flex {
-      align-items: center; /* Alinea verticalmente los hijos */
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-    }
-
-    /* Footer 2*/
+    /* Footer */
     footer {
       background-color: #222;
       color: #ddd;
-      padding: 1.35rem 0;
+      padding: 1.75rem 0;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 1.2px;
       user-select: none;
     }
@@ -679,102 +642,5 @@
       }
       #cabañas .card .card-img-top {
         height: 140px;
-      }
-    }
-    @media (max-width: 768px) {
-      footer .waves {
-        height: 80px;
-      }
-      footer .wave {
-        height: 80px;
-        background-size: 100% 100%;
-      }
-      footer .wave#wave1 { bottom: 0; }
-      footer .wave#wave2 { bottom: 5px; }
-      footer .wave#wave3 { bottom: 10px; }
-      footer .wave#wave4 { bottom: 15px; }
-    }
-    @media (max-width: 480px) {
-      footer .waves {
-        height: 60px;
-      }
-      footer .wave {
-        height: 60px;
-      }
-      footer .wave#wave2,
-      footer .wave#wave3,
-      footer .wave#wave4 {
-        bottom: 5px;
-      }
-    } 
-    @media (max-width: 576px) {
-      .footer-logo {
-        max-width: 60px;
-        max-height: 50px;
-      }
-      /* Reducir paddings y márgenes */
-      footer #contain {
-        padding: 0.5rem 0.25rem;
-      }
-
-      /* Reducir el tamaño del logo */
-      .footer-logo {
-        max-width: 60px;
-        max-height: 50px;
-      }
-
-      /* Reducir el tamaño de los enlaces */
-      .foot-link {
-        font-size: 0.75rem;
-      }
-
-      /* Ajustar íconos sociales */
-      .social-links {
-        gap: 8px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .social-item {
-        width: 40px;
-        height: 40px;
-      }
-
-      .social-item:hover {
-        width: 100px;
-      }
-
-      .social-item .icon i {
-        font-size: 1rem;
-      }
-
-      .social-item .titulo {
-        font-size: 0.65rem;
-      }
-      /* Eliminar texto largo si no entra */
-      .social-item a {
-        gap: 5px;
-        padding: 0 5px;
-      }
-    }
-    @media (max-width: 768px) {
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .social-item {
-        width: 60px;
-        height: 60px;
-      }
-
-      .social-item:hover {
-        width: 60px; /* evitar que se expanda en pantallas pequeñas */
-      }
-
-      .social-item .titulo {
-        display: none !important; /* evitar texto en dispositivos chicos */
       }
     }

@@ -212,49 +212,109 @@
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card shadow-sm">
-                        <img src="assets/imagenes/Cab1.jpg" class="card-img-top"
-                            alt="Cabaña chica ideal para escapada en pareja" />
-                        <div class="card-body">
-                            <h5>Cabaña chica – Ideal para una escapada en pareja</h5>
-                            <p>Descubrí la calidez y tranquilidad de una cabaña pensada para el descanso. Perfecta para
-                                parejas o grupos pequeños que buscan intimidad, naturaleza y comodidad en un solo lugar.
-                            </p>
-                            <a href="#" class="btn btn-warning w-100">Ver Más</a>
+            <div class="row g-4" id="container-card">
+            
+            </div>
+        </div>
+    </section>
+    <!-- Modales para las card -->
+    <section>
+        <div class="modal fade" id="cabinModal" onhidden.bs.modal="resetForm()" tabindex="-1" aria-labelledby="cabinModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"><p>X</p></button>
+                    <div class="modal-body">
+                        <div class="row" id="row-container">
+                            <div class="col-5">
+                                <img name="imagenes-modal" src="" alt="" >
+                                <img name="imagenes-modal" src="" alt="" >
+                                <img name="imagenes-modal" src="" alt="" >
+                            </div>
+                            <div class="col-7">
+                                <img name="imagenes-modal" class="" src="" alt="" >
+                                <img name="imagenes-modal" class="" src="" alt="" >
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card shadow-sm">
-                        <img src="assets/imagenes/Cab5.jpg" class="card-img-top"
-                            alt="Cabaña mediana con balcón y hogar para disfrutar en familia" />
-                        <div class="card-body">
-                            <h5>Cabaña mediana – Con balcón y hogar, para disfrutar en familia</h5>
-                            <p>Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan
-                                calidez y espacio, ideales para familias que quieren relajarse y compartir momentos
-                                únicos.</p>
-                            <a href="#" class="btn btn-warning w-100">Ver Más</a>
+                        
+                        <div class="row m-4">
+                            <div class="col-lg-7">
+                                <h4 class="modal-title" id="cabinModalLabel"></h4>
+                                <h5 id="modal-shortDescription"></h5>
+                                <span class="badge" id="modal-price"></span>
+                                <p id="modal-capacity" class="text-dark mb-2"></p>
+                                <p id="modal-description"></p>
+                                <h5 class="mt-4 mb-3">Características</h5>
+                                <ul id="modal-features"></ul>
+                            </div>
+                            <div class="col-lg-5 shadow-sm card">
+                                <div class="card-body">
+                                    <h5 class="mb-4">Reserva ahora</h5>
+                                    <form class="row g-4 justify-content-center needs-validation" id="formularioReserva" novalidate>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="R_nameId" placeholder="Nombre Completo" required />
+                                            <label for="R_nameId">Nombre Completo</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Ingrese nombre completo</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="R_email" placeholder="E-mail" required />
+                                            <label for="R_email">E-mail</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Ingrese un E-mail valido</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="R_telefono" pattern="^\+?\d{10,15}$"
+                                                placeholder="+5491123456789" required />
+                                            <label for="R_telefono">Telefono</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Ingrese un telefono valido</div>
+                                        </div>
+                                        <!-- Fecha de entrada -->
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="R_fechaEntrada" oninput="minFechaSalida()" required />
+                                            <label for="R_fechaEntrada">Fecha de entrada</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Seleccione una fecha de entrada valida</div>
+                                        </div>
+
+                                        <!-- Fecha de salida -->
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="R_fechaSalida" required />
+                                            <label for="R_fechaSalida">Fecha de salida</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Seleccione una fecha de salida valida</div>
+                                        </div>
+                                        <!-- Cantidad de huéspedes -->
+                                        <div class="form-floating">
+                                        <select class="form-select" id="R_huespedes" required>
+                                            
+                                        </select>
+                                        <label for="R_huespedes">Cantidad de huéspedes</label>
+                                        <div class="valid-tooltip">Campo válido</div>
+                                        <div class="invalid-tooltip">Seleccione una cantidad</div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" id="R_tArea" minlength="10" placeholder="Comentario Adicional"></textarea>
+                                            <label for="R_tArea">Comentario Adicional</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Escriba al menos 10 caracteres</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-warning px-5">Enviar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card shadow-sm">
-                        <img src="assets/imagenes/Cab3.jpg" class="card-img-top"
-                            alt="Cabaña grande con confort y espacio para toda la familia" />
-                        <div class="card-body">
-                            <h5>Cabaña grande – Confort y espacio para toda la familia</h5>
-                            <p>La opción más amplia del complejo, perfecta para grupos o familias numerosas. Con dos
-                                dormitorios y todo lo necesario para sentirse como en casa, rodeado de naturaleza y aire
-                                puro.</p>
-                            <a href="#" class="btn btn-warning w-100">Ver Más</a>
-                        </div>
+                        
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Imagenes-->
     <section class="bg-white" id="galeria" tabindex="0" aria-labelledby="cabanas-title">
@@ -279,23 +339,8 @@
                 <div class="col-lg-5">
                     <div id="carouselExampleAutoplaying" class="carousel slide shadow" data-bs-ride="carousel"
                     aria-label="Galería de imágenes del complejo">
-                        <div class="carousel-inner rounded-3 overflow-hidden">
-                            <div class="carousel-item active" data-bs-interval="4000">
-                            <img src="assets/imagenes/JComplejo1.jpg" class="d-block w-100"
-                                alt="Vista panorámica del complejo La Bonita" />
-                            </div>
-                            <div class="carousel-item" data-bs-interval="4000">
-                            <img src="assets/imagenes/JPileta3.jpg" class="d-block w-100"
-                                alt="Piscina del complejo La Bonita" />
-                            </div>
-                            <div class="carousel-item" data-bs-interval="4000">
-                            <img src="assets/imagenes/JComplejo4.jpg" class="d-block w-100"
-                                alt="Otra vista del complejo La Bonita" />
-                            </div>
-                            <div class="carousel-item" data-bs-interval="4000">
-                            <img src="assets/imagenes/JPileta2.jpg" class="d-block w-100"
-                                alt="Piscina y solárium" />
-                            </div>
+                        <div class="carousel-inner rounded-3 overflow-hidden" id="carrusel">
+                            
                         </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -354,7 +399,7 @@
             </div>
             <form class="row g-4 justify-content-center needs-validation" novalidate>
                 <div class="col-lg-6 form-floating">
-                    <input type="text" class="form-control" id="nameId" placeholder="Nombre" required />
+                    <input type="text" class="form-control" id="nameId" placeholder="Nombre" minlength="3" required />
                     <label for="nameId">Nombre</label>
                     <div class="valid-tooltip">Campo válido</div>
                     <div class="invalid-tooltip">Es necesario poner el Nombre</div>

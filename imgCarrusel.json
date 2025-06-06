@@ -1,0 +1,22 @@
+[
+    {
+        "image":"assets/imagenes/PILETA/paisajePileta.jpg",
+        "description":"Paisaje piscina del complejo La Bonita"
+    },
+    {
+        "image": "assets/imagenes/COMPLEJO/JComplejo1.jpg",
+        "description": "Vista panorámica 1 del complejo La Bonita"
+    },
+    {
+        "image":"assets/imagenes/PILETA/JPileta2.jpg",
+        "description":"Piscina del complejo La Bonita (2)"
+    },
+    {
+        "image":"assets/imagenes/COMPLEJO/JComplejo4.jpg",
+        "description":"Vista panorámica 4 del complejo La Bonita"
+    },
+    {
+        "image":"assets/imagenes/PILETA/JPileta3.jpg",
+        "description":"Piscina del complejo La Bonita (3)"
+    }
+]

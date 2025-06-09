@@ -75,7 +75,7 @@
 
     /* Banner */
     section.banner {
-      background: url('assets/imagenes/PILETA/paisajePileta.jpg') no-repeat center center/cover;
+      background: url('assets/imagenes/PILETA/paisajePileta.webp') no-repeat center center/cover;
       background-position: center 20%;
       padding: 6rem 0 5rem;
       position: relative;
@@ -464,7 +464,7 @@
 
     /* Contacto */
     .contacto {
-      background: url('assets/imagenes/COMPLEJO/complejoNoche.jpg') no-repeat center center/cover;
+      background: url('assets/imagenes/COMPLEJO/complejoNoche.webp') no-repeat center center/cover;
       color: #fff;
       padding: 6rem 0;
       position: relative;

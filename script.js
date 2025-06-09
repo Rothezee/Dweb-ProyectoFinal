@@ -52,7 +52,7 @@ function createCabinsCards(){
           <span class="price-tag">$${cabin.price}/noche</span>
           <img src=${cabin.image[0]} class="card-img-top" alt=${cabin.title} />
           <div class="card-body p-3">
-            <h5>${cabin.title} – ${cabin.shortDescription}</h5>
+            <h5>${cabin.title} N°${cabin.id} – ${cabin.shortDescription}</h5>
             <p>${cabin.description}</p>
             <button class="btn btn-warning w-100" 
                     data-bs-toggle="modal" 
@@ -65,7 +65,7 @@ function createCabinsCards(){
 }
 
 function fillModal(cabin) {
-  document.getElementById('cabinModalLabel').innerHTML = cabin.title+":";
+  document.getElementById('cabinModalLabel').innerHTML = cabin.title+": N°"+cabin.id;
   document.getElementById('modal-shortDescription').innerHTML = cabin.shortDescription;
   document.querySelectorAll("img[name='imagenes-modal']").forEach((img,i) => {
     img.src = cabin.image[i+1];

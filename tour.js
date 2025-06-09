@@ -13,8 +13,9 @@ const imagenOriginal = {
 };
 
 const destinos = {
+  "inicio": imagenOriginal,
   "entrar": {
-    src: "assets/imagenes/Tour/entrada.png",
+    src: "assets/imagenes/Tour/entrada.webp",
     alt: "Interior de la cabaña"
   },
   "asador": {
@@ -22,7 +23,7 @@ const destinos = {
     alt: "Vista del asador"
   },
   "cocina": {
-    src: "assets/imagenes/Tour/cocina.png",
+    src: "assets/imagenes/Tour/cocina.webp",
     alt: "Cocina de la cabaña"
   },
   "habitacion1": {
@@ -35,70 +36,89 @@ const destinos = {
   }
 };
 
-// Utilidad para ocultar todos los botones de paso
-function ocultarPasos() {
-  cocinaBtn.style.display = "none";
-  habitacion1Btn.style.display = "none";
-  habitacion2Btn.style.display = "none";
-  cocinaBtn.classList.add("hide");
-  habitacion1Btn.classList.add("hide");
-  habitacion2Btn.classList.add("hide");
+let historyStack = ["inicio"]; // Guarda el historial de navegación
+
+function ocultarTodos() {
+  [entrar, asador, cocinaBtn, habitacion1Btn, habitacion2Btn, volver].forEach(btn => {
+    btn.style.display = "none";
+    btn.classList.add("hide");
+  });
 }
 
-// Función genérica para cambiar de imagen y mostrar los botones indicados
-function cambiarImagenYBotones(destino, botonesAMostrar = []) {
-  tourImage.classList.remove("tour-zoom-out", "tour-zoom-in");
-  ocultarPasos();
-  tourBtns.forEach(btn => btn.classList.add("hide"));
-  volver.classList.add("hide");
-  volver.style.display = "none";
+function mostrarBtns(btns) {
+  btns.forEach(btn => {
+    btn.style.display = "block";
+    setTimeout(() => btn.classList.remove("hide"), 20);
+  });
+}
 
-  // Zoom in animado
+function cambiarImagenYBotones(destino, botonesAMostrar = []) {
+  // Agrega el destino al historial si es diferente al actual
+  if (historyStack[historyStack.length - 1] !== destino) {
+    historyStack.push(destino);
+  }
+
+  // Animación
+  tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
   void tourImage.offsetWidth;
   tourImage.classList.add("tour-zoom-in");
+
+  ocultarTodos();
 
   setTimeout(() => {
     tourImage.src = destinos[destino].src;
     tourImage.alt = destinos[destino].alt;
     tourImage.classList.remove("tour-zoom-in");
-
-    volver.style.display = "block";
-    setTimeout(() => volver.classList.remove("hide"), 20);
-
-    botonesAMostrar.forEach(btn => {
-      btn.style.display = "block";
-      setTimeout(() => btn.classList.remove("hide"), 20);
-    });
+    mostrarBtns([volver, ...botonesAMostrar]);
   }, 700);
 }
 
-// Eventos de los botones de inicio
+// Entrar muestra cocina
 entrar.addEventListener("click", () => cambiarImagenYBotones("entrar", [cocinaBtn]));
+// Asador solo muestra volver
 asador.addEventListener("click", () => cambiarImagenYBotones("asador", []));
-
-// Volver al inicio (restaura todo)
-volver.addEventListener("click", () => {
-  ocultarPasos();
-  volver.classList.add("hide");
-  tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
-  void tourImage.offsetWidth;
-  tourImage.classList.add("tour-zoom-out");
-
-  setTimeout(() => {
-    tourImage.src = imagenOriginal.src;
-    tourImage.alt = imagenOriginal.alt;
-    tourImage.classList.remove("tour-zoom-out");
-    tourBtns.forEach(btn => {
-      btn.style.display = "block";
-      btn.classList.remove("hide");
-    });
-    volver.style.display = "none";
-  }, 700);
-});
-
-// Ver cocina
+// Cocina muestra habitaciones
 cocinaBtn.addEventListener("click", () => cambiarImagenYBotones("cocina", [habitacion1Btn, habitacion2Btn]));
-
-// Habitaciones
+// Habitaciones permiten navegar entre sí
 habitacion1Btn.addEventListener("click", () => cambiarImagenYBotones("habitacion1", [habitacion1Btn, habitacion2Btn]));
 habitacion2Btn.addEventListener("click", () => cambiarImagenYBotones("habitacion2", [habitacion1Btn, habitacion2Btn]));
+
+// Volver vuelve al estado anterior del historial
+volver.addEventListener("click", () => {
+  if (historyStack.length > 1) {
+    // Quitar el actual
+    historyStack.pop();
+    const anterior = historyStack[historyStack.length - 1];
+
+    tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
+    void tourImage.offsetWidth;
+    tourImage.classList.add("tour-zoom-out");
+    ocultarTodos();
+
+    setTimeout(() => {
+      tourImage.src = destinos[anterior].src;
+      tourImage.alt = destinos[anterior].alt;
+      tourImage.classList.remove("tour-zoom-out");
+
+      // Mostrar los botones correctos según el destino anterior
+      if (anterior === "inicio") {
+        mostrarBtns([entrar, asador]);
+      } else if (anterior === "entrar") {
+        mostrarBtns([volver, cocinaBtn]);
+      } else if (anterior === "asador") {
+        mostrarBtns([volver]);
+      } else if (anterior === "cocina") {
+        mostrarBtns([volver, habitacion1Btn, habitacion2Btn]);
+      } else if (anterior === "habitacion1" || anterior === "habitacion2") {
+        mostrarBtns([volver, habitacion1Btn, habitacion2Btn]);
+      }
+    }, 700);
+  }
+});
+
+// Al cargar la página, mostrar solo los botones de inicio y reiniciar historial
+window.addEventListener("DOMContentLoaded", () => {
+  historyStack = ["inicio"];
+  ocultarTodos();
+  mostrarBtns([entrar, asador]);
+});

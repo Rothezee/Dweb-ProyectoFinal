@@ -181,12 +181,12 @@ EFECTOS DE TRANSICIÓN
 }
 
 #habitacion1-btn {
-  bottom: 12%;
-  left: 40%;
+  bottom: 40%;
+  left: 50%;
   transform: translateX(-50%);
 }
 #habitacion2-btn {
-  bottom: 12%;
-  left: 60%;
+  bottom: 40%;
+  left: 70%;
   transform: translateX(-50%);
 }

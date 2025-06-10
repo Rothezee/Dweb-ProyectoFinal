@@ -616,7 +616,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      pointer-events: none;      
+
     }
     .footer-logo {
       max-width: 120px;
@@ -636,6 +636,7 @@
       height: 50px;
       z-index: 0; /* detrás del contenido */
       border: #e9d15a;
+      pointer-events: none;
     }
     footer .wave{
       position: absolute;
@@ -645,6 +646,7 @@
       height: 200%;
       background: url('assets/svg/wave.svg');
       background-size: 40% 200%;
+      pointer-events: none;
     }
     footer .wave#wave1{
       z-index: 2;

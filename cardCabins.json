@@ -5,19 +5,31 @@
         "price": 50,
         "shortDescription": "Ideal para una escapada en pareja",
         "description": "Descubrí la calidez y tranquilidad de una cabaña pensada para el descanso. Perfecta para parejas o grupos pequeños que buscan intimidad, naturaleza y comodidad en un solo lugar.",
-        "image": ["assets/imagenes/CabinOne/Cab1-0.jpg","assets/imagenes/CabinOne/Cab1-1.png","assets/imagenes/CabinOne/Cab1-2.png","assets/imagenes/CabinOne/Cab1-3.png","assets/imagenes/CabinOne/Cab1-4.png","assets/imagenes/CabinOne/Cab1-5.png"],
+        "image": [
+            "assets/imagenes/CabinOne/Cab1-0.webp",
+            "assets/imagenes/CabinOne/Cab1-1.webp",
+            "assets/imagenes/CabinOne/Cab1-2.webp",
+            "assets/imagenes/CabinOne/Cab1-6.webp",
+            "assets/imagenes/CabinOne/Cab1-4.webp",
+            "assets/imagenes/CabinOne/Cab1-5.webp"],
         "capacity": "2-3 personas",
         "features": ["Wi-Fi", "DirecTV", "Galeria", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Calefacción","Pileta"]
     },
     {
-        "id": 5,
-        "title": "Cabaña mediana",
-        "price": 75,
-        "shortDescription": "Con balcón y hogar, para disfrutar en familia",
-        "description": "Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan calidez y espacio, ideales para familias que quieren relajarse y compartir momentos únicos.", 
-        "image": ["assets/imagenes/CabinFive/Cab5-0.jpg","assets/imagenes/CabinFive/Cab5-1.png","assets/imagenes/CabinFive/Cab5-2.png","assets/imagenes/CabinFive/Cab5-3.png","assets/imagenes/CabinFive/Cab5-4.png","assets/imagenes/CabinFive/Cab5-5.png"],
-        "capacity": "4-5 personas",
-        "features": ["Wi-Fi", "DirecTV", "Balcón", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Hogar","Pileta"]
+        "id": 2,
+        "title": "Cabaña chica",
+        "price": 50,
+        "shortDescription": "Ideal para una escapada en pareja",
+        "description": "Descubrí la calidez y tranquilidad de una cabaña pensada para el descanso. Perfecta para parejas o grupos pequeños que buscan intimidad, naturaleza y comodidad en un solo lugar.",
+        "image": [
+            "assets/imagenes/CabinTwo/Cab2-0.webp",
+            "assets/imagenes/CabinTwo/Cab2-3.webp",
+            "assets/imagenes/CabinTwo/Cab2-4.webp",
+            "assets/imagenes/CabinTwo/Cab2-6.webp",
+            "assets/imagenes/CabinTwo/Cab2-7.webp",
+            "assets/imagenes/CabinTwo/Cab2-8.webp"],
+        "capacity": "2-3 personas",
+        "features": ["Wi-Fi", "DirecTV", "Galeria", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Calefacción","Pileta"]
     },
     {
         "id": 3,
@@ -25,9 +37,47 @@
         "price": 85,
         "shortDescription": "Confort y espacio para toda la familia",
         "description": "La opción más amplia del complejo, perfecta para grupos o familias numerosas. Con dos dormitorios y todo lo necesario para sentirse como en casa, rodeado de naturaleza y aire puro.",
-        "image": ["assets/imagenes/CabinThree/Cab3-0.jpg","assets/imagenes/CabinThree/Cab3-1.png","assets/imagenes/CabinThree/Cab3-2.png","assets/imagenes/CabinThree/Cab3-3.png","assets/imagenes/CabinThree/Cab3-4.png","assets/imagenes/CabinThree/Cab3-5.png"],
+        "image": [
+            "assets/imagenes/CabinThree/Cab3-0.webp",
+            "assets/imagenes/CabinThree/Cab3-3.webp",
+            "assets/imagenes/CabinThree/Cab3-10.webp",
+            "assets/imagenes/CabinThree/Cab3-6.webp",
+            "assets/imagenes/CabinThree/Cab3-8.webp",
+            "assets/imagenes/CabinThree/Cab3-9.webp"],
         "capacity": "5-6 personas",
         "features": ["Wi-Fi", "DirecTV", "Galeria", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Calefaccion","Pileta"]
+    },
+    {
+        "id": 4,
+        "title": "Cabaña mediana",
+        "price": 75,
+        "shortDescription": "Con balcón y hogar, para disfrutar en familia",
+        "description": "Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan calidez y espacio, ideales para familias que quieren relajarse y compartir momentos únicos.", 
+        "image": [
+            "assets/imagenes/CabinFour/Cab4-0.webp",
+            "assets/imagenes/CabinFour/Cab4-5.webp",
+            "assets/imagenes/CabinFour/Cab4-8.webp",
+            "assets/imagenes/CabinFour/Cab4-10.webp",
+            "assets/imagenes/CabinFour/Cab4-12.webp",
+            "assets/imagenes/CabinFour/Cab4-6.webp"],
+        "capacity": "4-5 personas",
+        "features": ["Wi-Fi", "DirecTV", "Balcón", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Hogar","Pileta"]
+    },
+    {
+        "id": 5,
+        "title": "Cabaña mediana",
+        "price": 75,
+        "shortDescription": "Con balcón y hogar, para disfrutar en familia",
+        "description": "Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan calidez y espacio, ideales para familias que quieren relajarse y compartir momentos únicos.", 
+        "image": [
+            "assets/imagenes/CabinFive/Cab5-0.webp",
+            "assets/imagenes/CabinFive/Cab5-2.webp",
+            "assets/imagenes/CabinFive/Cab5-10.webp",
+            "assets/imagenes/CabinFive/Cab5-6.webp",
+            "assets/imagenes/CabinFive/Cab5-8.webp",
+            "assets/imagenes/CabinFive/Cab5-3.webp"],
+        "capacity": "4-5 personas",
+        "features": ["Wi-Fi", "DirecTV", "Balcón", "Parrila", "Cocina equipada","Ropa de cama","Estacionamiento","Hogar","Pileta"]
     }
     
 ]

@@ -226,14 +226,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"><p>X</p></button>
                     <div class="modal-body">
                         <div class="row" id="row-container">
-                            <div class="col-5">
-                                <img name="imagenes-modal" src="" alt="" >
-                                <img name="imagenes-modal" src="" alt="" >
-                                <img name="imagenes-modal" src="" alt="" >
-                            </div>
-                            <div class="col-7">
-                                <img name="imagenes-modal" class="" src="" alt="" >
-                                <img name="imagenes-modal" class="" src="" alt="" >
+                            <div id="containerCarouselModal" class="h-100 carousel slide shadow" data-bs-ride="carousel"
+                            aria-label="Galería de imágenes de las Cabañas">
+                                <div class="carousel-inner h-100" id="carruselModal">
+                                    
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#containerCarouselModal"
+                                    data-bs-slide="prev" aria-label="Imagen anterior">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#containerCarouselModal"
+                                    data-bs-slide="next" aria-label="Imagen siguiente">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
                             </div>
                         </div>
                         

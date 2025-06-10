@@ -67,10 +67,23 @@ function createCabinsCards(){
 function fillModal(cabin) {
   document.getElementById('cabinModalLabel').innerHTML = cabin.title+": N°"+cabin.id;
   document.getElementById('modal-shortDescription').innerHTML = cabin.shortDescription;
-  document.querySelectorAll("img[name='imagenes-modal']").forEach((img,i) => {
-    img.src = cabin.image[i+1];
-    img.alt = cabin.title;
+
+  //carrusel dianmico de Modal
+  let carrusel = document.getElementById("carruselModal");
+  let estado = "active";
+  carrusel.innerHTML = "";
+  cabin.image.forEach((img,i) => {
+    if(i!==0){
+          estado = "";
+        }
+    carrusel.innerHTML += 
+    ` <div class="carousel-item ${estado}" data-bs-interval="4000">
+        <img src="${img}" class="d-block w-100" alt="" />
+      </div>  `;
   });
+  //
+
+
   document.getElementById('modal-price').innerHTML = `$${cabin.price} / noche`;
   document.getElementById('modal-capacity').innerHTML = `<b>Capacidad:</b> ${cabin.capacity}`;
   document.getElementById('modal-description').innerHTML = cabin.description;

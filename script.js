@@ -49,15 +49,21 @@ function createCabinsCards(){
     card.innerHTML += 
     `<div class="col-lg-4">
         <div class="card shadow-sm">
-          <span class="price-tag">$${cabin.price}/noche</span>
-          <img src=${cabin.image[0]} class="card-img-top" alt=${cabin.title} />
-          <div class="card-body p-3">
-            <h5>${cabin.title} N°${cabin.id} – ${cabin.shortDescription}</h5>
-            <p>${cabin.description}</p>
-            <button class="btn btn-warning w-100" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#cabinModal"
-                    onclick='fillModal(${JSON.stringify(cabin)})'>Ver Más</button>
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-12 position-relative">
+              <span class="price-tag">$${cabin.price}/noche</span>
+              <img src=${cabin.image[0]} class="card-img-top" alt=${cabin.title} />
+            </div>
+            <div class="col-md-6 col-lg-12">
+              <div class="card-body p-3">
+                <h5>${cabin.title} N°${cabin.id} – ${cabin.shortDescription}</h5>
+                <p>${cabin.description}</p>
+                <button class="btn btn-warning w-100" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#cabinModal"
+                        onclick='fillModal(${JSON.stringify(cabin)})'>Ver Más</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>`;
@@ -74,6 +80,11 @@ function fillModal(cabin) {
   document.getElementById('modal-price').innerHTML = `$${cabin.price} / noche`;
   document.getElementById('modal-capacity').innerHTML = `<b>Capacidad:</b> ${cabin.capacity}`;
   document.getElementById('modal-description').innerHTML = cabin.description;
+
+  //Indicador de cabaña en input invisible (para indicar que cabaña es al enviar el formulario)
+  document.getElementById("R_IdCabaña").value = "Cabaña: "+cabin.id;
+  //
+
   //opciones de cantidad de huespedes segun cabaña seleccionada
   let huespedes = document.getElementById("R_huespedes");
   huespedes.innerHTML = `<option value="" disabled selected>Seleccione cantidad</option>`;
@@ -105,6 +116,7 @@ function fillModal(cabin) {
     modalFeatures.innerHTML += `<li>${feature}</li>`;
   }); 
 }
+
 //fucnion para poner limitacion a la fecha de salida
 function minFechaSalida(){
   let fechaEntrada = document.getElementById("R_fechaEntrada");

@@ -1,142 +1,146 @@
-const entrar = document.getElementById("entrar");
-const asador = document.getElementById("asador");
-const volver = document.getElementById("volver-btn");
-const cocinaBtn = document.getElementById("cocina-btn");
-const habitacion1Btn = document.getElementById("habitacion1-btn");
-const habitacion2Btn = document.getElementById("habitacion2-btn");
-const tocadorBtn = document.getElementById("tocador-btn");
-const banoBtn = document.getElementById("bano-btn");
-const tourImage = document.getElementById("tour-image");
-const tourBtns = [entrar, asador];
+class Tour {
+  constructor(options) {
+    // Elementos
+    this.entrar = document.getElementById(options.entrarId || "entrar");
+    this.asador = document.getElementById(options.asadorId || "asador");
+    this.volver = document.getElementById(options.volverId || "volver-btn");
+    this.cocinaBtn = document.getElementById(options.cocinaId || "cocina-btn");
+    this.habitacion1Btn = document.getElementById(options.hab1Id || "habitacion1-btn");
+    this.habitacion2Btn = document.getElementById(options.hab2Id || "habitacion2-btn");
+    this.tocadorBtn = document.getElementById(options.tocadorId || "tocador-btn");
+    this.banoBtn = document.getElementById(options.banoId || "bano-btn");
+    this.tourImage = document.getElementById(options.imagenId || "tour-image");
 
-const imagenOriginal = {
-  src: "assets/imagenes/Tour/frente.png",
-  alt: "Frente de la cabaña"
-};
+    // Configuración de destinos
+    this.destinos = options.destinos;
+    this.imagenOriginal = options.destinos.inicio;
+    this.historyStack = ["inicio"];
 
-const destinos = {
-  "inicio": imagenOriginal,
-  "entrar": {
-    src: "assets/imagenes/Tour/entrada.webp",
-    alt: "Interior de la cabaña"
-  },
-  "asador": {
-    src: "assets/imagenes/Tour/asador.png",
-    alt: "Vista del asador"
-  },
-  "cocina": {
-    src: "assets/imagenes/Tour/cocina.webp",
-    alt: "Cocina de la cabaña"
-  },
-  "habitacion1": {
-    src: "assets/imagenes/Tour/habitacion1.webp",
-    alt: "Habitación 1"
-  },
-  "habitacion2": {
-    src: "assets/imagenes/Tour/habitacion2.webp",
-    alt: "Habitación 2"
-  },
-  "tocador": {
-    src: "assets/imagenes/Tour/tocador.webp",
-    alt: "Tocador"
-  },
-  "bano": {
-    src: "assets/imagenes/Tour/baño.webp",
-    alt: "Baño"
-  }
-};
+    // Mapeo de botones para ocultar/mostrar fácilmente
+    this.todosLosBotones = [
+      this.entrar,
+      this.asador,
+      this.cocinaBtn,
+      this.habitacion1Btn,
+      this.habitacion2Btn,
+      this.tocadorBtn,
+      this.banoBtn,
+      this.volver
+    ];
 
-let historyStack = ["inicio"]; // Guarda el historial de navegación
+    // Asignación de eventos
+    this._asignarEventos();
 
-function ocultarTodos() {
-  [entrar, asador, cocinaBtn, habitacion1Btn, habitacion2Btn, volver, tocadorBtn, banoBtn].forEach(btn => {
-    btn.style.display = "none";
-    btn.classList.add("hide");
-  });
-}
-
-function mostrarBtns(btns) {
-  btns.forEach(btn => {
-    btn.style.display = "block";
-    setTimeout(() => btn.classList.remove("hide"), 20);
-  });
-}
-
-function cambiarImagenYBotones(destino, botonesAMostrar = []) {
-  // Agrega el destino al historial si es diferente al actual
-  if (historyStack[historyStack.length - 1] !== destino) {
-    historyStack.push(destino);
+    // Inicialización
+    window.addEventListener("DOMContentLoaded", () => this.iniciarTour());
   }
 
-  // Animación
-  tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
-  void tourImage.offsetWidth;
-  tourImage.classList.add("tour-zoom-in");
+  ocultarTodos() {
+    this.todosLosBotones.forEach(btn => {
+      if (btn) {
+        btn.style.display = "none";
+        btn.classList.add("hide");
+      }
+    });
+  }
 
-  ocultarTodos();
+  mostrarBtns(btns) {
+    btns.forEach(btn => {
+      if (btn) {
+        btn.style.display = "block";
+        setTimeout(() => btn.classList.remove("hide"), 20);
+      }
+    });
+  }
 
-  setTimeout(() => {
-    tourImage.src = destinos[destino].src;
-    tourImage.alt = destinos[destino].alt;
-    tourImage.classList.remove("tour-zoom-in");
-    mostrarBtns([volver, ...botonesAMostrar]);
-  }, 700);
-}
+  cambiarImagenYBotones(destino, botonesAMostrar = []) {
+    // Agrega el destino al historial si es diferente al actual
+    if (this.historyStack[this.historyStack.length - 1] !== destino) {
+      this.historyStack.push(destino);
+    }
 
-// Entrar muestra cocina
-entrar.addEventListener("click", () => cambiarImagenYBotones("entrar", [cocinaBtn]));
-// Asador solo muestra volver
-asador.addEventListener("click", () => cambiarImagenYBotones("asador", []));
-// Cocina muestra habitaciones y tocador
-cocinaBtn.addEventListener("click", () => cambiarImagenYBotones("cocina", [habitacion1Btn, habitacion2Btn, tocadorBtn]));
-// Habitaciones solo muestran volver
-habitacion1Btn.addEventListener("click", () => cambiarImagenYBotones("habitacion1", []));
-habitacion2Btn.addEventListener("click", () => cambiarImagenYBotones("habitacion2", []));
-// Tocador muestra baño
-tocadorBtn.addEventListener("click", () => cambiarImagenYBotones("tocador", [banoBtn]));
-// Baño solo muestra volver
-banoBtn.addEventListener("click", () => cambiarImagenYBotones("bano", []));
+    // Animación
+    this.tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
+    void this.tourImage.offsetWidth;
+    this.tourImage.classList.add("tour-zoom-in");
 
-// Volver vuelve al estado anterior del historial
-volver.addEventListener("click", () => {
-  if (historyStack.length > 1) {
-    // Quitar el actual
-    historyStack.pop();
-    const anterior = historyStack[historyStack.length - 1];
-
-    tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
-    void tourImage.offsetWidth;
-    tourImage.classList.add("tour-zoom-out");
-    ocultarTodos();
+    this.ocultarTodos();
 
     setTimeout(() => {
-      tourImage.src = destinos[anterior].src;
-      tourImage.alt = destinos[anterior].alt;
-      tourImage.classList.remove("tour-zoom-out");
-
-      // Mostrar los botones correctos según el destino anterior
-      if (anterior === "inicio") {
-        mostrarBtns([entrar, asador]);
-      } else if (anterior === "entrar") {
-        mostrarBtns([volver, cocinaBtn]);
-      } else if (anterior === "asador") {
-        mostrarBtns([volver]);
-      } else if (anterior === "cocina") {
-        mostrarBtns([volver, habitacion1Btn, habitacion2Btn, tocadorBtn]);
-      } else if (anterior === "habitacion1" || anterior === "habitacion2") {
-        mostrarBtns([volver]);
-      } else if (anterior === "tocador") {
-        mostrarBtns([volver, banoBtn]);
-      } else if (anterior === "bano") {
-        mostrarBtns([volver]);
-      }
+      this.tourImage.src = this.destinos[destino].src;
+      this.tourImage.alt = this.destinos[destino].alt;
+      this.tourImage.classList.remove("tour-zoom-in");
+      this.mostrarBtns([this.volver, ...botonesAMostrar]);
     }, 700);
   }
-});
 
-// Al cargar la página, mostrar solo los botones de inicio y reiniciar historial
-window.addEventListener("DOMContentLoaded", () => {
-  historyStack = ["inicio"];
-  ocultarTodos();
-  mostrarBtns([entrar, asador]);
-});
+  volverAlAnterior() {
+    if (this.historyStack.length > 1) {
+      // Quitar el actual
+      this.historyStack.pop();
+      const anterior = this.historyStack[this.historyStack.length - 1];
+
+      this.tourImage.classList.remove("tour-zoom-in", "tour-zoom-out");
+      void this.tourImage.offsetWidth;
+      this.tourImage.classList.add("tour-zoom-out");
+      this.ocultarTodos();
+
+      setTimeout(() => {
+        this.tourImage.src = this.destinos[anterior].src;
+        this.tourImage.alt = this.destinos[anterior].alt;
+        this.tourImage.classList.remove("tour-zoom-out");
+
+        // Mostrar los botones correctos según el destino anterior
+        if (anterior === "inicio") {
+          this.mostrarBtns([this.entrar, this.asador]);
+        } else if (anterior === "entrar") {
+          this.mostrarBtns([this.volver, this.cocinaBtn]);
+        } else if (anterior === "asador") {
+          this.mostrarBtns([this.volver]);
+        } else if (anterior === "cocina") {
+          this.mostrarBtns([this.volver, this.habitacion1Btn, this.habitacion2Btn, this.tocadorBtn]);
+        } else if (anterior === "habitacion1" || anterior === "habitacion2") {
+          this.mostrarBtns([this.volver]);
+        } else if (anterior === "tocador") {
+          this.mostrarBtns([this.volver, this.banoBtn]);
+        } else if (anterior === "bano") {
+          this.mostrarBtns([this.volver]);
+        }
+      }, 700);
+    }
+  }
+
+  iniciarTour() {
+    this.historyStack = ["inicio"];
+    this.ocultarTodos();
+    this.mostrarBtns([this.entrar, this.asador]);
+    this.tourImage.src = this.imagenOriginal.src;
+    this.tourImage.alt = this.imagenOriginal.alt;
+  }
+
+  _asignarEventos() {
+    // Entrar muestra cocina
+    if (this.entrar)
+      this.entrar.addEventListener("click", () => this.cambiarImagenYBotones("entrar", [this.cocinaBtn]));
+    // Asador solo muestra volver
+    if (this.asador)
+      this.asador.addEventListener("click", () => this.cambiarImagenYBotones("asador", []));
+    // Cocina muestra habitaciones y tocador
+    if (this.cocinaBtn)
+      this.cocinaBtn.addEventListener("click", () => this.cambiarImagenYBotones("cocina", [this.habitacion1Btn, this.habitacion2Btn, this.tocadorBtn]));
+    // Habitaciones solo muestran volver
+    if (this.habitacion1Btn)
+      this.habitacion1Btn.addEventListener("click", () => this.cambiarImagenYBotones("habitacion1", []));
+    if (this.habitacion2Btn)
+      this.habitacion2Btn.addEventListener("click", () => this.cambiarImagenYBotones("habitacion2", []));
+    // Tocador muestra baño
+    if (this.tocadorBtn)
+      this.tocadorBtn.addEventListener("click", () => this.cambiarImagenYBotones("tocador", [this.banoBtn]));
+    // Baño solo muestra volver
+    if (this.banoBtn)
+      this.banoBtn.addEventListener("click", () => this.cambiarImagenYBotones("bano", []));
+    // Volver vuelve al estado anterior del historial
+    if (this.volver)
+      this.volver.addEventListener("click", () => this.volverAlAnterior());
+  }
+}

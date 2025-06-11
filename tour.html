@@ -78,7 +78,20 @@
     </main>
 
     <!-- Bootstrap JS -->
-    <script src="tour.js"></script>
+    <script src="Tour.js"></script>
+    <script>
+    const destinos = {
+        "inicio": { src: "assets/imagenes/Tour/frente.png", alt: "Frente de la cabaña" },
+        "entrar": { src: "assets/imagenes/Tour/entrada.webp", alt: "Interior de la cabaña" },
+        "asador": { src: "assets/imagenes/Tour/asador.png", alt: "Vista del asador" },
+        "cocina": { src: "assets/imagenes/Tour/cocina.webp", alt: "Cocina de la cabaña" },
+        "habitacion1": { src: "assets/imagenes/Tour/habitacion1.webp", alt: "Habitación 1" },
+        "habitacion2": { src: "assets/imagenes/Tour/habitacion2.webp", alt: "Habitación 2" },
+        "tocador": { src: "assets/imagenes/Tour/tocador.webp", alt: "Tocador" },
+        "bano": { src: "assets/imagenes/Tour/baño.webp", alt: "Baño" }
+    };
+    new Tour({ destinos });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>

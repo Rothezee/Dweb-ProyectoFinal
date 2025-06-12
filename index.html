@@ -242,18 +242,28 @@
                                     <h5 class="mb-4">Reserva ahora</h5>
                                     <form class="row g-4 justify-content-center needs-validation" id="formularioReserva" novalidate
                                     action="https://formsubmit.co/facundogleon@gmail.com" method="post">
+                                        <!-- Nombre -->
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="R_name" name="R_name" placeholder="Nombre Completo" required />
-                                            <label for="R_name">Nombre Completo</label>
+                                            <input type="text" class="form-control" id="R_nombre" name="R_nombre" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]{2,}(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$" placeholder="Nombre/s" required />
+                                            <label for="R_nombre">Nombre/s</label>
                                             <div class="valid-tooltip">Campo válido</div>
-                                            <div class="invalid-tooltip">Ingrese nombre completo</div>
+                                            <div class="invalid-tooltip">Ingrese nombre valido</div>
                                         </div>
+                                        <!-- Apellido -->
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="R_email" name="R_email" placeholder="E-mail" required />
+                                            <input type="text" class="form-control" id="R_apellido" name="R_apellido" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]{2,}(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$" placeholder="Apellido/s" required />
+                                            <label for="R_apellido">Apellido/s</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Ingrese apellido valido</div>
+                                        </div>
+                                        <!-- E-mail -->
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="R_email" name="R_email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="E-mail" required />
                                             <label for="R_email">E-mail</label>
                                             <div class="valid-tooltip">Campo válido</div>
                                             <div class="invalid-tooltip">Ingrese un E-mail valido</div>
                                         </div>
+                                        <!-- Telefono -->
                                         <div class="form-floating">
                                             <input type="tel" class="form-control" id="R_telefono" name="R_telefono" pattern="^\+?\d{10,15}$"
                                                 placeholder="+5491123456789" required />
@@ -278,12 +288,24 @@
                                         </div>
                                         <!-- Cantidad de huéspedes -->
                                         <div class="form-floating">
-                                        <select class="form-select" id="R_huespedes" name="R_huespedes" required>
-                                            
-                                        </select>
-                                        <label for="R_huespedes">Cantidad de huéspedes</label>
-                                        <div class="valid-tooltip">Campo válido</div>
-                                        <div class="invalid-tooltip">Seleccione una cantidad</div>
+                                            <select class="form-select" id="R_huespedes" name="R_huespedes" required>
+                                                
+                                            </select>
+                                            <label for="R_huespedes">Cantidad de huéspedes</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Seleccione una cantidad</div>
+                                        </div>
+                                        <!-- Forma de pago -->
+                                        <div class="form-floating">
+                                            <select class="form-select" id="R_formaPago" name="R_formaPago" required>
+                                                <option value="" disabled selected>Seleccione forma de pago</option>
+                                                <option value="Transferencia">Transferencia</option>
+                                                <option value="Credito">Credito</option>
+                                                <option value="Debito">Debito</option>
+                                            </select>
+                                            <label for="R_formaPago">Forma de pago</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Seleccione una opcion</div>
                                         </div>
                                         <div class="form-floating">
                                             <textarea class="form-control" id="R_comentario" name="R_comentario" minlength="10" placeholder="Comentario Adicional"></textarea>
@@ -395,13 +417,13 @@
             <form class="row g-4 justify-content-center needs-validation" novalidate
             action="https://formsubmit.co/facundogleon@gmail.com" method="POST">
                 <div class="col-lg-6 form-floating">
-                    <input type="text" class="form-control" id="C_name" name="C_name" placeholder="Nombre" minlength="3" required />
+                    <input type="text" class="form-control" id="C_name" name="C_name" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]{2,}(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$" placeholder="Nombre" minlength="3" required />
                     <label for="C_name">Nombre</label>
                     <div class="valid-tooltip">Campo válido</div>
                     <div class="invalid-tooltip">Es necesario poner el Nombre</div>
                 </div>
                 <div class="col-lg-6 form-floating">
-                    <input type="email" class="form-control" id="C_email" name="C_email" placeholder="E-mail" required />
+                    <input type="email" class="form-control" id="C_email" name="C_email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="E-mail" required />
                     <label for="C_email">E-mail</label>
                     <div class="valid-tooltip">Campo válido</div>
                     <div class="invalid-tooltip">Es necesario poner el E-mail</div>

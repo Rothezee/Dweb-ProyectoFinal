@@ -356,6 +356,10 @@
     }
     /* Formulario del modal */
 
+    .modal .card {
+      box-shadow: 0 0 20px var(--secondary-color);
+    }
+
     .modal form .form-floating > .form-control, .form-select {
       border-radius: var(--border-radius);
       background-color: rgba(255 255 255 / 0.9);
@@ -385,6 +389,11 @@
       transition: all var(--transition-speed);
       text-transform: uppercase;
     }
+    .modal #datosTarjeta {
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 15px var(--secondary-color);
+    }
+
     .modal form .btn-warning:hover,
     .modal form .btn-warning:focus {
       background-color: var(--secondary-color);

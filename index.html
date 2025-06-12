@@ -237,7 +237,7 @@
                                 <h5 class="mt-4 mb-3">Características</h5>
                                 <ul id="modal-features"></ul>
                             </div>
-                            <div class="col-lg-5 shadow-sm card">
+                            <div class="col-lg-5 card">
                                 <div class="card-body">
                                     <h5 class="mb-4">Reserva ahora</h5>
                                     <form class="row g-4 justify-content-center needs-validation" id="formularioReserva" novalidate
@@ -297,7 +297,7 @@
                                         </div>
                                         <!-- Forma de pago -->
                                         <div class="form-floating">
-                                            <select class="form-select" id="R_formaPago" name="R_formaPago" required>
+                                            <select class="form-select" id="R_formaPago" name="R_formaPago" onchange="datosTargeta(); actualizarCamposPago()" required>
                                                 <option value="" disabled selected>Seleccione forma de pago</option>
                                                 <option value="Transferencia">Transferencia</option>
                                                 <option value="Credito">Credito</option>
@@ -307,6 +307,34 @@
                                             <div class="valid-tooltip">Campo válido</div>
                                             <div class="invalid-tooltip">Seleccione una opcion</div>
                                         </div>
+                                        <!-- Datos de tarjeta (solo si se elige crédito o débito) -->
+                                        <div id="datosTarjeta" class="d-none">
+                                        <!-- Número de tarjeta -->
+                                        <div class="form-floating my-2">
+                                            <input type="text" class="form-control campo-tarjeta" id="R_numTarjeta" name="R_numTarjeta"
+                                                placeholder="Número de tarjeta" pattern="^\d{16}$" inputmode="numeric" required/>
+                                            <label for="R_numTarjeta">Número de tarjeta</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Ingrese un número válido (16 digitos)</div>
+                                        </div>
+                                        <!-- Fecha de vencimiento -->
+                                        <div class="form-floating my-2">
+                                            <input type="month" class="form-control campo-tarjeta" id="R_vencimiento" name="R_vencimiento" required />
+                                            <label for="R_vencimiento">Vencimiento</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Seleccione una fecha válida</div>
+                                        </div>
+                                        <!-- Código de seguridad -->
+                                        <div class="form-floating my-2">
+                                            <input type="text" class="form-control campo-tarjeta" id="R_cvv" name="R_cvv"
+                                                placeholder="CVV" pattern="^\d{3,4}$" required/>
+                                            <label for="R_cvv">CVV</label>
+                                            <div class="valid-tooltip">Campo válido</div>
+                                            <div class="invalid-tooltip">Código inválido</div>
+                                        </div>
+                                        </div>
+
+                                        <!-- Comentario -->
                                         <div class="form-floating">
                                             <textarea class="form-control" id="R_comentario" name="R_comentario" minlength="10" placeholder="Comentario Adicional"></textarea>
                                             <label for="R_comentario">Comentario Adicional</label>

@@ -106,8 +106,11 @@ function fillModal(cabin) {
   //limitaciones de fechas (Defecto)
   let fechaEntrada = document.getElementById("R_fechaEntrada");
   let fechaSalida = document.getElementById("R_fechaSalida");
-  fechaEntrada.min = new Date().toISOString().split("T")[0];//fecha actual aaaa-mm-dd
-  fechaSalida.min = new Date().toISOString().split("T")[0];//fecha actual aaaa-mm-dd
+  let fechaVencimientoTarjeta = document.getElementById("R_vencimiento");
+  let hoy = new Date();
+  fechaEntrada.min = hoy.toISOString().split("T")[0];//fecha actual aaaa-mm-dd
+  fechaSalida.min = hoy.toISOString().split("T")[0];//fecha actual aaaa-mm-dd
+  fechaVencimientoTarjeta.min = hoy.toISOString().slice(0, 7);//Obtine las primeras 7 letras osea YYYY-MM
   // 
   const modalFeatures = document.getElementById('modal-features');
   modalFeatures.innerHTML = ''; // Limpiamos primero
@@ -126,6 +129,41 @@ function minFechaSalida(){
   fechaSalida.min = valorFechaEntrada.toISOString().split("T")[0];
 }
 
+//funcion datos de tarjeta
+function datosTargeta() {
+  let formaPago = document.getElementById("R_formaPago");
+  const datosTarjeta = document.getElementById("datosTarjeta");
+  const necesitaTarjeta = formaPago.value === "Credito" || formaPago.value === "Debito";
+
+  datosTarjeta.classList.toggle("d-none", !necesitaTarjeta);
+
+  // Si no se necesita tarjeta, limpiamos los valores
+  if (!necesitaTarjeta) {
+    datosTarjeta.querySelectorAll("input").forEach(input => {
+      input.value = "";
+      input.classList.remove("is-invalid", "is-valid");
+    });
+  }
+}
+//funcion para que no afecte los datos de la tarjeta con la validacion al elegir tranferencia
+function actualizarCamposPago() {
+  const formaPago = document.getElementById("R_formaPago").value;
+  const camposTarjeta = document.querySelectorAll(".campo-tarjeta");
+
+  if (formaPago === "Credito" || formaPago === "Debito") {
+    camposTarjeta.forEach(campo => {
+      campo.disabled = false;
+      campo.required = true;
+    });
+  } else {
+    camposTarjeta.forEach(campo => {
+      campo.disabled = true;
+      campo.required = false;
+    });
+  }
+}
+//-------------------------
+
 //funcion para reinciar mensajes y formulario al cerrar modal
 function resetForm(){
   const modal = document.getElementById("cabinModal"); // Reemplazá con tu ID real
@@ -134,6 +172,7 @@ function resetForm(){
     // Limpiar sólo los estilos de validación (sin romper funcionalidad)
     form.classList.remove("was-validated");
     form.reset();
+    datosTargeta();
   });
   
 }

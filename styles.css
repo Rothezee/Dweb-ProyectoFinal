@@ -379,11 +379,7 @@
       transition: all var(--transition-speed);
       text-transform: uppercase;
     }
-    .modal #datosTarjeta {
-      border-radius: var(--border-radius);
-      box-shadow: 0 0 15px var(--secondary-color);
-    }
-
+    
     .modal form .btn-warning:hover,
     .modal form .btn-warning:focus {
       background-color: var(--secondary-color);

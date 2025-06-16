@@ -9,6 +9,7 @@
       --border-radius: 0.5rem;
       --transition-speed: 0.3s;
 
+      --succes-color: #198754;
       --primary-light: #f6e27a; /*#e6c84d;*/
       --background-dark: #1f2d3d;
     }
@@ -196,17 +197,6 @@
       transform: scale(1.1);
     }
 
-    /* #complejo .fondoVideo {
-      position:absolute;
-      bottom: 0%;
-      left: 30%;
-      width: 70%;    
-      height: 93%;  
-      background-color: var(--secondary-color);
-      border-radius: var(--border-radius);
-      z-index: 1;
-    } */
-
     /* Cards Cabañas */
     #cabañas .card {
       cursor: pointer;
@@ -377,7 +367,7 @@
       color: var(--secondary-color);
       font-weight: 700;
     }
-    .modal form .btn-warning {
+    .modal .btn-warning {
       background-color: var(--primary-color);
       color: white;
       box-shadow: 0 5px 25px var(--secondary-color);
@@ -401,6 +391,31 @@
     }
     .modal .form-floating > label {
       left: 1rem; /* mueve el label a la derecha */
+    }
+
+    /* Modal de confirmacion */
+    #confirmacion h5 {
+      color: var(--succes-color);
+      width: 100%;
+      text-align: center;
+    }
+
+    #confirmacion .btn-warning{
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 5px 25px var(--secondary-color);
+      border-radius: var(--border-radius);
+      border: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 0.5rem 1.5rem;
+      transition: all var(--transition-speed);
+      text-transform: uppercase;
+    }
+    #confirmacion .btn-warning:hover,
+    #confirmacion .btn-warning:focus {
+      background-color: var(--secondary-color);
+      box-shadow: 0 10px 25px var(--primary-light);
     }
 
 

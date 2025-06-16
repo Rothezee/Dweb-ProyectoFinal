@@ -162,6 +162,38 @@ function actualizarCamposPago() {
     });
   }
 }
+
+//mostrar modal de confirmacion
+function enviarFormulario(formulario) {
+  let mensaje = "";
+  if (!formulario.checkValidity()) {
+    formulario.classList.add('was-validated');
+    return false;
+  }
+
+  // Si pasa la validación
+  formulario.classList.add('was-validated');
+
+  // Mostrar modal de confirmación
+  if(formulario.id==="formularioReserva"){
+    mensaje = "¡Gracias por reservar con nosotros! Pronto nos pondremos en contacto contigo para coordinar el pago y asegurarnos de que todo esté listo para tu experiencia.";
+  }
+  if(formulario.id=="formularioContacto"){
+    mensaje = "¡Gracias por escribirnos! Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.";
+  }
+  document.getElementById("mensajeModalConfirmacion").innerHTML = mensaje;
+  const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+  modal.show();
+
+  // Opcional: resetear el formulario luego de mostrar el modal
+  setTimeout(() => {
+    formulario.reset();
+    formulario.classList.remove('was-validated');
+  }, 500);
+
+  return false; 
+}
+//
 //-------------------------
 
 //funcion para reinciar mensajes y formulario al cerrar modal
@@ -201,6 +233,9 @@ function carruselDinamico(){
     });
   
 }
+
+
+
 
 window.onload = function () {
     createObjectCab().then(() => {

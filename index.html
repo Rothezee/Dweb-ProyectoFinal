@@ -240,8 +240,7 @@
                             <div class="col-lg-5 card">
                                 <div class="card-body">
                                     <h5 class="mb-4">Reserva ahora</h5>
-                                    <form class="row g-4 justify-content-center needs-validation" id="formularioReserva" novalidate
-                                    action="https://formsubmit.co/facundogleon@gmail.com" method="post">
+                                    <form class="row g-4 justify-content-center needs-validation" id="formularioReserva" onsubmit="return enviarFormulario(this)" method="post" novalidate>
                                         <!-- Nombre -->
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="R_nombre" name="R_nombre" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]{2,}(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$" placeholder="Nombre/s" required />
@@ -300,8 +299,7 @@
                                             <select class="form-select" id="R_formaPago" name="R_formaPago" onchange="datosTargeta(); actualizarCamposPago()" required>
                                                 <option value="" disabled selected>Seleccione forma de pago</option>
                                                 <option value="Transferencia">Transferencia</option>
-                                                <option value="Credito">Credito</option>
-                                                <option value="Debito">Debito</option>
+                                                <option value="Credito">Credito/Debito</option>
                                             </select>
                                             <label for="R_formaPago">Forma de pago</label>
                                             <div class="valid-tooltip">Campo válido</div>
@@ -359,6 +357,26 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal de confirmación -->
+    <section id="confirmacion">
+        <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalConfirmacionLabel">¡Envío exitoso!</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="mensajeModalConfirmacion"></p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
 
     <!-- Imagenes-->
@@ -442,8 +460,7 @@
                     <p>¿Tienes alguna duda o necesitas contarnos algo? No dudes en escribirnos.</p>
                 </div>
             </div>
-            <form class="row g-4 justify-content-center needs-validation" novalidate
-            action="https://formsubmit.co/facundogleon@gmail.com" method="POST">
+            <form class="row g-4 justify-content-center needs-validation" id="formularioContacto" onsubmit="return enviarFormulario(this)" method="post" novalidate>
                 <div class="col-lg-6 form-floating">
                     <input type="text" class="form-control" id="C_name" name="C_name" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]{2,}(?: [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$" placeholder="Nombre" minlength="3" required />
                     <label for="C_name">Nombre</label>

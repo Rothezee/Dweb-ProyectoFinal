@@ -73,6 +73,22 @@
     header nav.navbar .nav-link.active::after {
       width: 100%;
     }
+ /*animacion para nav*/
+  header nav.navbar {
+    animation: slidenav 0.6s ease-out forwards;
+  }
+
+  @keyframes slidenav {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 
     /* Banner */
     section.banner {
@@ -110,6 +126,31 @@
       box-shadow: 0 10px 25px rgb(179 139 33 / 0.35);
       color: white !important;
     }
+    /*Efectos de animacion en el banner*/
+  .banner-content h1,
+  .banner-content h2,
+  .banner-content a {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+  }
+
+  /* Retrasos escalonados para efecto secuencial */
+  .banner-content h2 {
+    animation-delay: 0.3s;
+  }
+
+  .banner-content a {
+    animation-delay: 0.6s;
+  }
+
+  /* Keyframes para el efecto */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
     /* Secciones */
     section {
@@ -152,12 +193,23 @@
       
     }
     
-    #complejo .accordion-body {
-      background-color: #fff;
-      color: var(--secondary-color);
-      font-weight: 500;
-      border-radius: var(--border-radius);
-    }
+   #complejo .accordion-body {
+    background-color: #fff;
+    color: var(--secondary-color);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+  }
+
+    /* Transición de altura al abrir el acordeón */
+  .accordion-collapse {
+    transition: height 0.2s ease;
+  }
+
+  /* Cuando el contenido está visible (Bootstrap le pone .show al .collapse) */
+  .accordion-collapse.show .accordion-body {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
     #complejo h3 {
       font-size: 1.9rem;
@@ -673,6 +725,7 @@
       left: 0;
       width: 100%;
       height: 200%;
+      background-repeat: repeat-x; 
       background: url('assets/svg/wave.svg');
       background-size: 40% 200%;
     }

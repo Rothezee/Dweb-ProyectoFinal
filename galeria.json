@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "title": "Cabaña chica",
+        "shortDescription": "Ideal para una escapada en pareja",
+        "image": [            
+            "assets/imagenes/CabinOne/Cab1-0.webp",
+            "assets/imagenes/CabinOne/Cab1-1.webp",
+            "assets/imagenes/CabinOne/Cab1-2.webp",
+            "assets/imagenes/CabinOne/Cab1-6.webp",
+            "assets/imagenes/CabinOne/Cab1-4.webp",
+            "assets/imagenes/CabinOne/Cab1-5.webp"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Cabaña mediana",
+        "shortDescription": "Con balcón y hogar, para disfrutar en familia",
+        "image": [
+            "assets/imagenes/CabinFour/Cab4-0.webp",
+            "assets/imagenes/CabinFour/Cab4-5.webp",
+            "assets/imagenes/CabinFour/Cab4-8.webp",
+            "assets/imagenes/CabinFour/Cab4-10.webp",
+            "assets/imagenes/CabinFour/Cab4-12.webp",
+            "assets/imagenes/CabinFour/Cab4-6.webp"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Cabaña grande",
+        "shortDescription": "Confort y espacio para toda la familia",
+        "image": [
+            "assets/imagenes/CabinThree/Cab3-0.webp",
+            "assets/imagenes/CabinThree/Cab3-3.webp",
+            "assets/imagenes/CabinThree/Cab3-10.webp",
+            "assets/imagenes/CabinThree/Cab3-6.webp",
+            "assets/imagenes/CabinThree/Cab3-8.webp",
+            "assets/imagenes/CabinThree/Cab3-9.webp"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Pileta",
+        "shortDescription": "Refrescate y Disfrutá del Sol en Nuestra Piscina",
+        "image": [
+            "assets/imagenes/PILETA/paisajePileta.webp",
+            "assets/imagenes/PILETA/paisajeTerraza.webp",
+            "assets/imagenes/PILETA/pileta1.webp",
+            "assets/imagenes/PILETA/pileta2.webp",
+            "assets/imagenes/PILETA/pileta3.webp",
+            "assets/imagenes/PILETA/paisaje.webp"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Complejo",
+        "shortDescription": "Comodidad, Naturaleza y Relax en un Solo Lugar",
+        "image": [
+            "assets/imagenes/COMPLEJO/complejo.webp",
+            "assets/imagenes/COMPLEJO/complejoNoche.webp",
+            "assets/imagenes/COMPLEJO/frente.webp",
+            "assets/imagenes/COMPLEJO/JComplejo1.webp",
+            "assets/imagenes/COMPLEJO/JComplejo2.webp",
+            "assets/imagenes/COMPLEJO/JComplejo3.webp",
+            "assets/imagenes/COMPLEJO/JComplejo4.webp"
+        ]
+    }
+]

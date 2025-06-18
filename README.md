@@ -39,7 +39,7 @@ Este repositorio contiene todos los archivos del proyecto, incluyendo HTML, CSS,
 ```
 Dweb-ProyectoFinal/
 ├── index.html
-├── estilos.css
+├── styles.css
 ├── script.js
 ├── (otros archivos .html, .css, .js)
 ├── assets/

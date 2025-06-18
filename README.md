@@ -50,7 +50,7 @@ Dweb-ProyectoFinal/
 
 ## 📸 Capturas
 
-
+https://github.com/Rothezee/Dweb-ProyectoFinal/blob/main/assets/videos/gifparareadme.mp4
 
 ---
 

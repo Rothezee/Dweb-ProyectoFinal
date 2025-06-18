@@ -50,7 +50,7 @@ Dweb-ProyectoFinal/
 
 ## 📸 Capturas
 
-https://github.com/user-attachments/assets/e16b6b7a-4ce0-4c50-8823-bebfdfeba82a
+![Image](https://github.com/user-attachments/assets/ee806886-1dbe-40dc-879a-ada6a41d820d)
 
 ---
 

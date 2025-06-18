@@ -136,7 +136,6 @@ class Tour {
           [
             this.botones.cocina,
             this.botones.habitacion3,
-            this.botones.asador,
             this.botones.balcon
           ],
           e.currentTarget
@@ -165,7 +164,7 @@ class Tour {
       this.botones.habitacion3.addEventListener("click", e =>
         this.cambiarImagenYBotones(
           "habitacion3",
-          [this.botones.bano2, this.botones.balcon],
+          [this.botones.bano2],
           e.currentTarget
         )
       );

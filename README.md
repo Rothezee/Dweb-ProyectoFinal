@@ -50,7 +50,6 @@ Dweb-ProyectoFinal/
 
 ## 📸 Capturas
 
-(Añade aquí imágenes de tu proyecto si lo deseas)
 
 ---
 

@@ -1,13 +1,28 @@
 # Dweb-ProyectoFinal
 
-Este repositorio contiene el proyecto final para la materia de Desarrollo Web (DWeb). Aquí encontrarás el código fuente y los recursos necesarios para ejecutar y explorar el proyecto desarrollado.
+Este es el repositorio del proyecto final para la materia de Desarrollo Web (DWeb).
 
 ## Tecnologías utilizadas
 
 - **HTML**
 - **CSS**
 - **JavaScript**
-- **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** (para desarrollo local)
+- **Live Server** (para desarrollo local)
+
+## Estructura del repositorio
+
+Todos los archivos principales (`.html`, `.css`, `.js`) están en la raíz del repositorio, junto con una carpeta `assets` para imágenes y recursos.
+
+```
+Dweb-ProyectoFinal/
+├── index.html
+├── estilos.css
+├── script.js
+├── (otros archivos .html, .css, .js)
+├── assets/
+│   └── (imágenes y recursos)
+└── README.md
+```
 
 ## Instrucciones de uso
 
@@ -16,35 +31,22 @@ Este repositorio contiene el proyecto final para la materia de Desarrollo Web (D
    git clone https://github.com/Rothezee/Dweb-ProyectoFinal.git
    ```
 
-2. **Abre la carpeta del proyecto con tu editor de preferencia**  
+2. **Abre la carpeta del proyecto en tu editor de código favorito**  
    Recomendado: [Visual Studio Code](https://code.visualstudio.com/)
 
-3. **Inicia el servidor local**
-   - Si usas VS Code, instala la extensión **Live Server**.
+3. **Inicia Live Server**
+   - Instala la extensión **Live Server** en VS Code si no la tienes.
    - Haz clic derecho sobre el archivo `index.html` y selecciona **"Open with Live Server"**.
    - El proyecto se abrirá automáticamente en tu navegador predeterminado.
 
-4. **Navega y prueba la aplicación**
-   - Realiza pruebas y explora las funcionalidades que ofrece el proyecto.
-
-## Estructura del repositorio
-
-```
-Dweb-ProyectoFinal/
-├── index.html
-├── css/
-│   └── (archivos de estilos)
-├── js/
-│   └── (archivos de scripts)
-├── assets/
-│   └── (imágenes y otros recursos)
-└── README.md
-```
+4. **Listo!**
+   - Puedes modificar los archivos y ver los cambios en tiempo real.
+   - Explora todas las funcionalidades del proyecto.
 
 ## Notas
 
-- Si encuentras algún problema, por favor crea un [issue](https://github.com/Rothezee/Dweb-ProyectoFinal/issues).
-- Sugerencias y mejoras son bienvenidas.
+- Si tienes dudas o encuentras problemas, puedes crear un [issue](https://github.com/Rothezee/Dweb-ProyectoFinal/issues).
+- Se aceptan sugerencias y mejoras.
 
 ---
 

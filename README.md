@@ -1,22 +1,44 @@
-# Dweb-ProyectoFinal
+# 💻 Dweb-ProyectoFinal
 
-Este es el repositorio del proyecto final para la materia de Desarrollo Web (DWeb).
+¡Bienvenido/a al proyecto final de Desarrollo Web!  
+Este repositorio contiene todos los archivos del proyecto, incluyendo HTML, CSS, JS y recursos en la carpeta `assets`.
 
-## Tecnologías utilizadas
+---
 
-- **HTML**
-- **CSS**
-- **JavaScript**
-- **Live Server** (para desarrollo local)
+## 🛠️ Tecnologías
 
-## Estructura del repositorio
+- HTML  
+- CSS  
+- JavaScript  
+- [Live Server (VSCode)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-Todos los archivos principales (`.html`, `.css`, `.js`) están en la raíz del repositorio, junto con una carpeta `assets` para imágenes y recursos.
+---
+
+## 🚀 Cómo empezar
+
+1. **Clona este repositorio**
+   ```bash
+   git clone https://github.com/Rothezee/Dweb-ProyectoFinal.git
+   ```
+
+2. **Abre la carpeta en tu editor favorito**  
+   > Recomendado: Visual Studio Code
+
+3. **Instala la extensión Live Server** (si usas VSCode)
+
+4. **Haz clic derecho sobre `index.html`**  
+   y selecciona **"Open with Live Server"**.
+
+5. ¡Listo! El proyecto se abrirá en el navegador y podrás ver todos los cambios al instante.
+
+---
+
+## 📁 Estructura del repositorio
 
 ```
 Dweb-ProyectoFinal/
 ├── index.html
-├── styles.css
+├── estilos.css
 ├── script.js
 ├── (otros archivos .html, .css, .js)
 ├── assets/
@@ -24,30 +46,19 @@ Dweb-ProyectoFinal/
 └── README.md
 ```
 
-## Instrucciones de uso
+---
 
-1. **Clona este repositorio**
-   ```bash
-   git clone https://github.com/Rothezee/Dweb-ProyectoFinal.git
-   ```
+## 📸 Capturas
 
-2. **Abre la carpeta del proyecto en tu editor de código favorito**  
-   Recomendado: [Visual Studio Code](https://code.visualstudio.com/)
-
-3. **Inicia Live Server**
-   - Instala la extensión **Live Server** en VS Code si no la tienes.
-   - Haz clic derecho sobre el archivo `index.html` y selecciona **"Open with Live Server"**.
-   - El proyecto se abrirá automáticamente en tu navegador predeterminado.
-
-4. **Listo!**
-   - Puedes modificar los archivos y ver los cambios en tiempo real.
-   - Explora todas las funcionalidades del proyecto.
-
-## Notas
-
-- Si tienes dudas o encuentras problemas, puedes crear un [issue](https://github.com/Rothezee/Dweb-ProyectoFinal/issues).
-- Se aceptan sugerencias y mejoras.
+(Añade aquí imágenes de tu proyecto si lo deseas)
 
 ---
 
-¡Gracias por visitar este proyecto!
+## 🤝 Contribuciones
+
+Las contribuciones, sugerencias o mejoras son bienvenidas.  
+Puedes crear un [issue](https://github.com/Rothezee/Dweb-ProyectoFinal/issues) para reportar problemas o proponer cambios.
+
+---
+
+¡Gracias por visitar este proyecto!  

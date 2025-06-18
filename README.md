@@ -51,13 +51,15 @@ Dweb-ProyectoFinal/
 ## 📸 Capturas
 
 
----
-
-## 🤝 Contribuciones
-
-Las contribuciones, sugerencias o mejoras son bienvenidas.  
-Puedes crear un [issue](https://github.com/Rothezee/Dweb-ProyectoFinal/issues) para reportar problemas o proponer cambios.
 
 ---
 
-¡Gracias por visitar este proyecto!  
+## 👥 Contribuidores
+
+- <img src="https://avatars.githubusercontent.com/u/176447136?v=4" width="24" alt="Rothezee"/> [Rothezee](https://github.com/Rothezee)
+- <img src="https://avatars.githubusercontent.com/u/190776380?v=4" width="24" alt="FacundoGLeon"/> [FacundoGLeon](https://github.com/FacundoGLeon)
+- <img src="https://avatars.githubusercontent.com/u/188462919?v=4" width="24" alt="PiaGarces123"/> [PiaGarces123](https://github.com/PiaGarces123)
+
+---
+
+¡Gracias por visitar este proyecto!

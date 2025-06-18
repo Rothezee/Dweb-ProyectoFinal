@@ -1,7 +1,7 @@
 # 💻 Dweb-ProyectoFinal
 
 ¡Bienvenido/a al proyecto final de Desarrollo Web!  
-Este repositorio contiene todos los archivos del proyecto, incluyendo HTML, CSS, JS y recursos en la carpeta `assets`.
+Este repositorio contiene todos los archivos del proyecto, incluyendo HTML, CSS, JS, Json y recursos en la carpeta `assets`.
 
 ---
 
@@ -9,7 +9,8 @@ Este repositorio contiene todos los archivos del proyecto, incluyendo HTML, CSS,
 
 - HTML  
 - CSS  
-- JavaScript  
+- JavaScript
+- Json
 - [Live Server (VSCode)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ---

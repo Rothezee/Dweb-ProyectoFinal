@@ -16,7 +16,7 @@ Todos los archivos principales (`.html`, `.css`, `.js`) están en la raíz del r
 ```
 Dweb-ProyectoFinal/
 ├── index.html
-├── estilos.css
+├── styles.css
 ├── script.js
 ├── (otros archivos .html, .css, .js)
 ├── assets/

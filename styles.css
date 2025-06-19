@@ -8,6 +8,7 @@
       --text-muted: #1f2d3d;
       --border-radius: 0.5rem;
       --transition-speed: 0.3s;
+      --text-footer: #a1cbfc;
 
       --succes-color: #198754;
       --primary-light: #f6e27a; /*#e6c84d;*/
@@ -265,7 +266,7 @@
 
     /* Cards Cabañas */
     #cabañas .card {
-      
+
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: 0 10px 24px rgb(0 0 0 / 0.12);
@@ -1028,6 +1029,11 @@
       font-size: 1rem;
       letter-spacing: 1.2px;
       user-select: none;
+    }
+
+    #footer-2 a {
+        color: var(--text-footer) !important;
+        text-decoration: none;
     }
 
 

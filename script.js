@@ -1,22 +1,20 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
+  const forms = document.querySelectorAll('.needs-validation') // busca todos los forms con esta clase
 
-  // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
+      if (!form.checkValidity()) {      // verifica si el formulario es válido
+        event.preventDefault()          // si NO es válido, evita el envío
+        event.stopPropagation()         // detiene la propagación del evento
       }
 
-      form.classList.add('was-validated')
+      form.classList.add('was-validated')  // agrega clase de Bootstrap para mostrar errores
     }, false)
   })
 })()
+
 
 
 // ========== GESTIÓN DE DATOS DE CABAÑAS ==========

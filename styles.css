@@ -338,22 +338,6 @@
       overflow-x: hidden;
     }
 
-    #row-container {
-      height: 500px; /* o el alto total que desees */
-      overflow: hidden;
-      
-    }
-    
-    #row-container .col-5,
-    #row-container .col-7 {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      
-    }
-
     img[name="imagenes-modal"] {
       width: 100%;
       object-fit: cover;
@@ -568,30 +552,7 @@
         flex: 1;
     }
 
-    .date-input-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: var(--text-dark);
-    }
-
-    .date-input-group input {
-        width: 100%;
-        padding: 10px;
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        transition: all var(--transition-speed);
-        background: var(--background-light);
-    }
-
-    .date-input-group input:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
-        outline: none;
-        background: white;
-    }
-
+    
     .selected-range-info {
         background: linear-gradient(135deg, var(--primary-light), rgba(212, 175, 55, 0.1));
         padding: 15px;

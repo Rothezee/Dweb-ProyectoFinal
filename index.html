@@ -283,20 +283,43 @@
                                             <div class="valid-tooltip">Campo válido</div>
                                             <div class="invalid-tooltip">Ingrese un telefono valido</div>
                                         </div>
-                                        <!-- Fecha de entrada -->
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="R_fechaEntrada" name="R_fechaEntrada" oninput="minFechaSalida()" required />
-                                            <label for="R_fechaEntrada">Fecha de entrada</label>
-                                            <div class="valid-tooltip">Campo válido</div>
-                                            <div class="invalid-tooltip">Seleccione una fecha de entrada valida</div>
-                                        </div>
+                                        <div class="container mt-4">
+                                            <h5 class="mb-4"> - - Selecciona tu Rango de Fechas - - </h5>
+                                            
+                                            <!-- Campos de entrada de fecha -->
+                                            <div class="date-inputs-container">
+                                                <div class="date-input-group">
+                                                    <label for="R_fechaEntrada">Fecha de Entrada</label>
+                                                    <input type="date" id="R_fechaEntrada" class="form-control">
+                                                </div>
+                                                <div class="date-input-group">
+                                                    <label for="R_fechaSalida">Fecha de Salida</label>
+                                                    <input type="date" id="R_fechaSalida" class="form-control">
+                                                </div>
+                                            </div>
 
-                                        <!-- Fecha de salida -->
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="R_fechaSalida" name="R_fechaSalida" required />
-                                            <label for="R_fechaSalida">Fecha de salida</label>
-                                            <div class="valid-tooltip">Campo válido</div>
-                                            <div class="invalid-tooltip">Seleccione una fecha de salida valida</div>
+                                            <!-- Calendario personalizado -->
+                                            <div class="calendar-container">
+                                                <div class="calendar-header">
+                                                    <h3 class="calendar-title" id="calendar-title">Enero 2025</h3>
+                                                    <div class="calendar-nav">
+                                                        <button type="button" id="prev-month">‹</button>
+                                                        <button type="button" id="next-month">›</button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="calendar-grid" id="calendar-grid">
+                                                    <!-- El calendario se genera dinámicamente -->
+                                                </div>
+                                            </div>
+
+                                            <!-- Información del rango seleccionado -->
+                                            <div class="selected-range-info" id="range-info" style="display: none;">
+                                                <h6>Rango Seleccionado</h6>
+                                                <p><strong>Entrada:</strong> <span id="start-date-display">-</span></p>
+                                                <p><strong>Salida:</strong> <span id="end-date-display">-</span></p>
+                                                <p><strong>Noches:</strong> <span class="nights-count" id="nights-count">0</span></p>
+                                            </div>
                                         </div>
                                         <!-- Cantidad de huéspedes -->
                                         <div class="form-floating">
@@ -634,6 +657,7 @@
     <!-- Bootstrap JS -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

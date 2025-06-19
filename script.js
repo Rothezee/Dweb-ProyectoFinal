@@ -1,4 +1,4 @@
-//Validacion de Formularios
+// Validación de Formularios
 (() => {
   'use strict'
 
@@ -8,15 +8,16 @@
   // Verifica si son Validos
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
+      if (!form.checkValidity()) {      // verifica si el formulario es válido
+        event.preventDefault()          // si NO es válido, evita el envío
+        event.stopPropagation()         // detiene la propagación del evento
       }
 
-      form.classList.add('was-validated')
+      form.classList.add('was-validated')  // agrega clase de Bootstrap para mostrar errores
     }, false)
   })
 })()
+
 
 
 // ========== GESTIÓN DE DATOS DE CABAÑAS ==========

@@ -259,6 +259,15 @@ function minFechaSalida(){
 function enviarFormulario(formulario) {
   let mensaje = "";  
   // Verifica si el formulario es válido
+  const emailInput = document.getElementById("R_email");
+  const email = emailInput.value;
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9-]{3,}\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(email)) {
+    emailInput.setCustomValidity("Email inválido");
+  } else {
+    emailInput.setCustomValidity(""); // limpia el error
+  }
   if (!formulario.checkValidity()) {
     // Si no es válido, muestra los errores de validación
     formulario.classList.add('was-validated');

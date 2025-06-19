@@ -406,6 +406,56 @@
       color: white;
       font-size: 1rem;
     }
+    
+    /*Carrusel del Modal*/
+    .containerGM {
+        position: relative; 
+        margin: 100px auto; /* Centrar horizontalmente y dar espacio vertical */
+        width: min(1000px, calc(100vw - min(300px, 25vw)));
+        height: min(600px, calc(100vh - min(150px, 18vh)));
+        background: #f5f5f5;
+        box-shadow: 0 30px 50px rgb(188, 162, 57, 0.3);        
+    }
+
+    /* Primer carrusel  */
+    .containerGM[data-carrusel="0"] {
+        margin-top: min(100px, 10vh);
+        margin-bottom: 50px;
+    }
+
+    /* Espaciado adicional entre carruseles */
+    .containerGM[data-carrusel="1"] {
+        margin-bottom: 300px;
+    }
+
+    .containerGM[data-carrusel="2"] {
+        margin-top: 100px;
+        margin-bottom: 300px;
+    }
+
+    .containerGM[data-carrusel="3"] {
+        margin-bottom: 300px;
+    }
+
+    .containerGM[data-carrusel="4"] {
+        margin-top: 100px;
+        margin-bottom: 10px;
+    }
+
+    .containerGM .slideG .itemG {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 20px;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        transition: .5s;
+    }
+
     /* Formulario del modal */
 
     .modal .card {
@@ -519,22 +569,93 @@
       background-color: var(--secondary-color);
       z-index: 1;
     }
+
     .carousel-inner {
+      position: relative;
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: 0 4px 20px rgb(179 139 33);
       z-index: 2;
     }
+
     .carousel-item img {
       height: 320px;
       object-fit: cover;
       object-position: center;
       z-index: 2;
     }
+
     .carousel-control-prev,
     .carousel-control-next {
-      z-index: 3;
+      z-index: 5;
     }
+
+    /* Efecto shine permanente para el carrusel */
+    .carousel-with-shine {
+      position: relative;
+      overflow: visible;
+    }
+
+    /* Resplandor base permanente */
+    .carousel-with-shine::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: var(--border-radius, 0.5rem);
+      background: linear-gradient(45deg, 
+        rgba(223, 171, 29, 0.5), 
+        rgba(246, 226, 122, 0.8), 
+        rgba(241, 192, 56, 0.5)
+      );
+      z-index: 2;
+      animation: subtle-glow 1s ease-in-out infinite alternate;
+    }
+
+    /* Efecto shimmer que se desliza */
+    .carousel-with-shine::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: var(--border-radius, 0.5rem);
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(246, 226, 122, 0.8) 50%,
+        rgba(255, 255, 255, 0.6) 52%,
+        transparent 60%,
+        transparent 100%
+      );
+      background-size: 200% 200%;
+      background-position: -100% 0;
+      animation: shimmer-slide 3s ease-in-out infinite;
+      z-index: 1  ;
+    }
+
+   /* Animación del resplandor suave */
+  @keyframes subtle-glow {
+    0% { 
+      opacity: 0.6;
+      box-shadow: 0 0 10px rgba(179, 139, 33, 0.3);
+    }
+    100% { 
+      opacity: 0.9;
+      box-shadow: 0 0 20px rgba(246, 226, 122, 0.4);
+    }
+  }
+
+  /* Animación del shimmer deslizante */
+  @keyframes shimmer-slide {
+    0% {
+      background-position: -100% 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
 
     /* Ubicación */
     #ubicacion iframe {
@@ -744,25 +865,25 @@
       z-index: 2;
       opacity: 1;
       bottom: 50px;
-      animation: animateWave 4s linear infinite;      
+      animation: animateWave 4s linear infinite alternate;      
     }
     footer .wave#wave2{
       z-index: 3;
       opacity: 1;
       bottom: 40px;
-      animation: animateWave-02 4s linear infinite;      
+      animation: animateWave-02 4s linear infinite alternate;      
     }
     footer .wave#wave3{
       z-index: 2;
       opacity: 0.5;
       bottom: 40px;
-      animation: animateWave-02 3s linear infinite;      
+      animation: animateWave-02 3s linear infinite alternate;      
     }
     footer .wave#wave4{
       z-index: 3;
       opacity: 0.7;
       bottom: 40px;
-      animation: animateWave-02 3s linear infinite;      
+      animation: animateWave-02 3s linear infinite alternate;      
     }
     @keyframes animateWave {
       0% { background-position-x: 1000px;}
@@ -1522,5 +1643,26 @@
 
     .recorr {
         margin-top: 5rem;
-    }      
+    }     
+    
+    /*Carrusel de Modales*/
+    .containerGM {
+          margin: 5px auto; /* Centrar horizontalmente y dar espacio vertical */
+          width: min(350px, calc(250vw - min(10px, 5vw)));
+          height: min(100px, calc(400vh - min(15px, 5vh))); 
+          top: 50px;
+      }
+
+      /* Primer carrusel  */
+      .containerGM[data-carrusel="0"] {
+          margin-top: min(10px, 2vh);
+          margin-bottom: 150px;
+      }
+
+      .containerGM .slideG .itemG {
+          width: 190px;
+          height: 150px;
+          background-position: 10% 10%;
+      }
+      
     }

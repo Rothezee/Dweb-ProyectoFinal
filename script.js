@@ -564,68 +564,8 @@ window.onload = function () {
     carruselDinamico();
 };
 
-// ========== CARRUSEL PARA GALERÍA PRINCIPAL ==========
-// (Mantiene tu funcionalidad existente para otros carruseles)
 
-// Array para manejar múltiples carruseles
-let carruseles = [];
 
-function carruselDinamicoGal() {
-  fetch('galeria.json')
-    .then(res => res.json())
-    .then(data => {
-      if (!data.length) {
-        alert("No hay datos disponibles");
-        return;
-      }
-
-      // Obtener todos los contenedores de carrusel (excluyendo el del modal)
-      const containers = document.querySelectorAll('[data-carrusel]:not(#galeria)');
-      
-      containers.forEach((container) => {
-        const carruselIndex = parseInt(container.dataset.carrusel);
-        
-        // Verificar que existe data para este carrusel
-        if (data[carruselIndex] && data[carruselIndex].image.length) {
-          const datosCarrusel = data[carruselIndex];
-          
-          // Inicializar objeto carrusel
-          carruseles[carruselIndex] = {
-            imagenes: datosCarrusel.image,
-            index: 0
-          };
-          
-          // Actualizar carrusel 
-          actualizarCarrusel(container, datosCarrusel, carruseles[carruselIndex]);
-        }
-      });
-      
-      // Agregar eventos después de configurar todos los carruseles
-      agregarEventosCarruseles();
-    })
-    .catch(err => {
-      console.error("Error cargando JSON:", err);
-    });
-}
-
-function actualizarCarrusel(container, datos, carruselObj) {
-  if (!container) return;
-
-  // Actualizar textos específicos de este container
-  const nombres = container.querySelectorAll('.name');
-  const descripciones = container.querySelectorAll('.description');
-
-  nombres.forEach(nombre => {
-    nombre.textContent = datos.title;
-  });
-
-  descripciones.forEach(desc => {
-    desc.textContent = datos.shortDescription;
-  });
-
-  // Actualizar imágenes
-  actualizarImagenesCarrusel(container, carruselObj);
-}
 
 function actualizarImagenesCarrusel(container, carruselObj) {
   const items = container.querySelectorAll('.itemG');

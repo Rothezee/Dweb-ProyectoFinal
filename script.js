@@ -259,7 +259,7 @@ function minFechaSalida(){
 function enviarFormulario(formulario) {
   let mensaje = "";  
   // Verifica si el formulario es válido
-  const emailInput = document.getElementById("R_email");
+  const emailInput = formulario.querySelector(`input[type="email"]`);
   const email = emailInput.value;
 
   const emailPattern = /^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9-]{3,}\.[a-zA-Z]{2,}$/;

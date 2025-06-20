@@ -1650,6 +1650,9 @@
         padding: 0.8rem 0.3rem;
         min-height: 130px;
       }
+      #footer-tour{
+        margin-top: 75px;
+      }
       .social-links { /* Ajustar txt Redes Sociales */
         justify-content: center;
       }
@@ -1687,7 +1690,7 @@
         height: 40px;
       }
       footer .wave { /*Ola Individualmente*/
-        height: 80px;
+        height: 100px;
         background-size: 100% 100%;
         bottom: 0;
         left: 0;

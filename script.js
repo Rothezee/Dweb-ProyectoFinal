@@ -255,48 +255,103 @@ function minFechaSalida(){
 }
 
 // ========== ENVÍO DE FORMULARIOS ==========
-// Función que maneja el envío de formularios (reserva y contacto)
+
 function enviarFormulario(formulario) {
   let mensaje = "";  
-  // Verifica si el formulario es válido
-  const emailInput = formulario.querySelector(`input[type="email"]`);
-  const email = emailInput.value;
 
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook|yahoo|mail|live|icloud|unsl\.edu|edu\.ar|educacion\.ar)\.(com|ar|edu)$/;
-  if (!emailPattern.test(email)) {
-    emailInput.setCustomValidity("Email inválido");
-  } else {
-    emailInput.setCustomValidity(""); // limpia el error
-  }
+   // Validar todos los emails del formulario antes del envío
+  const emailInputs = formulario.querySelectorAll(`input[type="email"]`);
+  emailInputs.forEach(emailInput => {
+    validarEmail(emailInput);
+  });
+
   if (!formulario.checkValidity()) {
-    // Si no es válido, muestra los errores de validación
+
     formulario.classList.add('was-validated');
     return false;
   }
-  // Si pasa la validación, agrega estilos de validación exitosa
+
   formulario.classList.add('was-validated');
 
-  // ========== MENSAJES DE CONFIRMACIÓN ==========  
-  // Define el mensaje según el tipo de formulario
-  if(formulario.id==="formularioReserva"){
-    mensaje = "¡Gracias por reservar con nosotros! Pronto nos pondremos en contacto contigo para coordinar el pago y asegurarnos de que todo esté listo para tu experiencia.";
+  formulario.classList.add('was-validated');
+
+  // ========== MENSAJES DE CONFIRMACIÓN ==========
+  if (formulario.id === "formularioReserva") {
+    mensaje = "¡Gracias por reservar con nosotros! Pronto nos pondremos en contacto contigo.";
   }
-  if(formulario.id=="formularioContacto"){
+  if (formulario.id === "formularioContacto") {
     mensaje = "¡Gracias por escribirnos! Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.";
-  }  
-  // Muestra el mensaje en el modal de confirmación
+  }
+
   document.getElementById("mensajeModalConfirmacion").innerHTML = mensaje;
   const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
   modal.show();
 
-  // ========== RESETEO DEL FORMULARIO ==========  
-  // Después de medio segundo, limpia el formulario
+  // ========== RESETEO DEL FORMULARIO ==========
   setTimeout(() => {
-    formulario.reset(); // Limpia todos los campos
-    formulario.classList.remove('was-validated'); // Quita los estilos de validación
+    formulario.reset();
+    formulario.classList.remove('was-validated');
+    // Limpiar validaciones personalizadas
+    emailInputs.forEach(emailInput => {
+      emailInput.setCustomValidity("");
+    });
   }, 500);
-  return false; // Previene el envío real del formulario
+  return false;
 }
+
+// ========== FUNCIÓN DE VALIDACIÓN DE EMAIL ==========
+function validarEmail(emailInput) {
+  const email = emailInput.value.trim();
+  const emailPattern = /^[a-zA-Z]{3,}[a-zA-Z0-9._%+-]*@(gmail\.com|hotmail\.com|outlook\.com|yahoo\.com|mail\.com|live\.com|icloud\.com|unsl\.edu\.ar|edu\.ar|educacion\.ar)$/;
+
+  // Si el campo está vacío y es requerido, usar validación nativa
+  if (email === "") {
+    if (emailInput.hasAttribute('required')) {
+      emailInput.setCustomValidity("Este campo es obligatorio");
+    } else {
+      emailInput.setCustomValidity("");
+    }
+    return;
+  }
+
+  // Validar formato personalizado
+  if (!emailPattern.test(email)) {
+    emailInput.setCustomValidity("Email inválido. Debe tener al menos 3 letras antes del @ y usar un dominio válido (gmail.com, hotmail.com, etc.)");
+  } else {
+    emailInput.setCustomValidity("");
+  }
+}
+
+// ========== VALIDACIÓN EN TIEMPO REAL ==========
+function configurarValidacionEmailTiempoReal(emailInput) {
+  // Validar en cada input (mientras escribe)
+  emailInput.addEventListener("input", function () {
+    validarEmail(emailInput);
+  });
+
+  // Validar cuando pierde el foco
+  emailInput.addEventListener("blur", function () {
+    validarEmail(emailInput);
+  });
+
+  // Validar cuando gana el foco (para casos donde ya había un error)
+  emailInput.addEventListener("focus", function () {
+    // Solo limpiar si está vacío
+    if (emailInput.value.trim() === "") {
+      emailInput.setCustomValidity("");
+    }
+  });
+}
+
+// ========== INICIALIZACIÓN ==========
+window.addEventListener("DOMContentLoaded", function () {
+  // Configurar validación para todos los inputs de email
+  const emailInputs = document.querySelectorAll('input[type="email"]');
+  emailInputs.forEach(emailInput => {
+    configurarValidacionEmailTiempoReal(emailInput);
+  });
+});
+
 
 // ========== LIMPIEZA DE MODALES ==========// 
 // Variable para evitar múltiples event listeners
@@ -317,7 +372,11 @@ function resetForm() {
             // Limpiar validación de Bootstrap
             form.classList.remove("was-validated");
             form.reset();
-            
+            // Resetear validaciones de todos los emails cuando se cierra un modal
+            const emailInputs = document.querySelectorAll('input[type="email"]');
+            emailInputs.forEach(emailInput => {
+              emailInput.setCustomValidity("");
+            });
             // Resetear el calendario también
             if (globalCalendarInstance) {
                 globalCalendarInstance.selectedStartDate = null;

@@ -262,7 +262,7 @@ function enviarFormulario(formulario) {
   const emailInput = formulario.querySelector(`input[type="email"]`);
   const email = emailInput.value;
 
-  const emailPattern = /^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9-]{3,}\.[a-zA-Z]{2,}$/;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook|yahoo|mail|live|icloud|unsl\.edu|edu\.ar|educacion\.ar)\.(com|ar|edu)$/;
   if (!emailPattern.test(email)) {
     emailInput.setCustomValidity("Email inválido");
   } else {

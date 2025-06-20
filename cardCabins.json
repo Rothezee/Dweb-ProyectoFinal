@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Cabaña chica",
-        "price": 50,
+        "price": 50000,
         "shortDescription": "Ideal para una escapada en pareja",
         "description": "Descubrí la calidez y tranquilidad de una cabaña pensada para el descanso. Perfecta para parejas o grupos pequeños que buscan intimidad, naturaleza y comodidad en un solo lugar.",
         "image": [
@@ -18,7 +18,7 @@
     {
         "id": 2,
         "title": "Cabaña chica",
-        "price": 50,
+        "price": 50000,
         "shortDescription": "Ideal para una escapada en pareja",
         "description": "Descubrí la calidez y tranquilidad de una cabaña pensada para el descanso. Perfecta para parejas o grupos pequeños que buscan intimidad, naturaleza y comodidad en un solo lugar.",
         "image": [
@@ -34,7 +34,7 @@
     {
         "id": 3,
         "title": "Cabaña grande",
-        "price": 85,
+        "price": 85000,
         "shortDescription": "Confort y espacio para toda la familia",
         "description": "La opción más amplia del complejo, perfecta para grupos o familias numerosas. Con dos dormitorios y todo lo necesario para sentirse como en casa, rodeado de naturaleza y aire puro.",
         "image": [
@@ -50,7 +50,7 @@
     {
         "id": 4,
         "title": "Cabaña mediana",
-        "price": 75,
+        "price": 75000,
         "shortDescription": "Con balcón y hogar, para disfrutar en familia",
         "description": "Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan calidez y espacio, ideales para familias que quieren relajarse y compartir momentos únicos.", 
         "image": [
@@ -66,7 +66,7 @@
     {
         "id": 5,
         "title": "Cabaña mediana",
-        "price": 75,
+        "price": 75000,
         "shortDescription": "Con balcón y hogar, para disfrutar en familia",
         "description": "Despertate con vistas elevadas y el sonido del entorno natural. Estas cabañas combinan calidez y espacio, ideales para familias que quieren relajarse y compartir momentos únicos.", 
         "image": [
